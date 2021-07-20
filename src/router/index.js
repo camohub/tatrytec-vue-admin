@@ -19,6 +19,26 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: () => import(/* webpackChunkName: "login" */ '../views/Login.vue')
+  },
+  {
+    path: '/articles',
+    name: 'Articles',
+    component: () => import(/* webpackChunkName: "articles" */ '../views/Articles.vue')
+  },
+  {
+    path: '/article/create',
+    name: 'Article create',
+    component: () => import(/* webpackChunkName: "article create" */ '../views/ArticleCreate.vue')
+  },
+  {
+    path: '/category/create',
+    name: 'Category create',
+    component: () => import(/* webpackChunkName: "category create" */ '../views/CategoryCreate.vue')
+  },
+  {
+    path: '/users',
+    name: 'Users',
+    component: () => import(/* webpackChunkName: "users" */ '../views/Users.vue')
   }
 ]
 

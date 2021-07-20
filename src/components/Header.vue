@@ -1,15 +1,22 @@
 <template>
     <div class="container-fluid" id="header">
         <div class="row">
-            <h1 class="col-12">
+            <h1 class="col-12 col-sm-9">
+
                 <img src="../assets/logo.png" alt="" class="img-responsive" />
                 tatrytec.eu vue admin
             </h1>
+            
+            <div class="col-12 col-sm-3">
+                <UserName />
+            </div>
         </div>
     </div>
 </template>
 
 <script>
+
+import UserName from '@/components/UserName.vue';
 
 export default {
     name: 'Header',
@@ -19,6 +26,7 @@ export default {
     },
 
     components: {
+        UserName,
     },
 }
 </script>
@@ -39,5 +47,9 @@ export default {
     img {
         max-height: 2.5rem;
     }
+}
+
+#userName {
+    padding: 40px 20px 20px;
 }
 </style>

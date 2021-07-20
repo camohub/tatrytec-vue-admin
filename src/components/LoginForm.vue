@@ -29,6 +29,7 @@
 <script>
 
 import axios from "axios"
+import apiRoutes from '@/router/apiRoutes'
 
 export default {
     name: 'LoginForm',
@@ -39,8 +40,8 @@ export default {
 
     data() {
         return {
-            email: 'aaaa@aaaa.aa', 
-            password: 'aaaaaaaaa',
+            email: 'vladimircamaj@gmail.com', 
+            password: 'vladimir',
 
             errors: [],
         }
@@ -57,7 +58,7 @@ export default {
                 return;
             }
 
-            let url = `http://localhost:8000/api/vue-admin/login`;
+            let url = apiRoutes.LOGIN_URL;
             let formData = {
                 email: this.email,
                 password: this.password,

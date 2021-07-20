@@ -3,10 +3,7 @@ export default {
     namespaced: true,
 
     state: () => ({
-        user: {
-            'name': 'aaaaaaaaaaaaaaa',
-            'surname': 'bbbbbbbbbbbbbbb'
-        }
+        user: null
     }),
 
     mutations: {

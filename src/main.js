@@ -8,9 +8,6 @@ import 'jquery/src/jquery.js'
 import 'bootstrap/dist/js/bootstrap.min.js'
 
 
-
-
-
 router.beforeEach((to, from, next) => {
 
     if (to.name !== 'Login' && !store.getters['user/isLoggedIn']) 
@@ -18,8 +15,6 @@ router.beforeEach((to, from, next) => {
         next({ name: 'Login' });
         return;
     }
-
-    console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
     
     next()
 })
