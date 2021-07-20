@@ -1,4 +1,4 @@
-# laravel8-vue-admin-2
+# tatrytec-vue-admin
 
 ## Project setup
 ```
@@ -22,3 +22,14 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 # Axios
 - LoginForm component get the token from server.
 - Vuex User module setUser action sets the token header for all axios requests.
+
+# Vuex
+- User module
+- Alerts module
+
+# Router
+
+
+# Services
+
+
