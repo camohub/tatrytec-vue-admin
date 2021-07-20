@@ -8,6 +8,12 @@ import 'jquery/src/jquery.js'
 import 'bootstrap/dist/js/bootstrap.min.js'
 
 
+import axios from "axios"
+window.axios = axios;
+axios.defaults.withCredentials = true;
+
+
+
 router.beforeEach((to, from, next) => {
 
     if (to.name !== 'Login' && !store.getters['user/isLoggedIn']) 

@@ -28,8 +28,7 @@
 
 <script>
 
-import axios from "axios"
-import apiRoutes from '@/router/apiRoutes'
+import apiRoutes from '@/router/apiRoutes';
 
 export default {
     name: 'LoginForm',

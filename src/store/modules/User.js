@@ -15,6 +15,12 @@ export default {
     actions: {
         setUser(context, data) {
             context.commit('setUser', data);
+
+            console.log(context.state);
+
+            axios.defaults.headers.common = {
+                'Authorization': 'Bearer ' + context.state.user.token
+            };
         }
     },
 
