@@ -20,8 +20,6 @@ export default {
 
     getters: {
         isLoggedIn(state) {
-            console.log('isLoggedIn getter from User');
-            console.log(!!state.user);
             return !!state.user;
         },
 

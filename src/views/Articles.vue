@@ -27,6 +27,7 @@ import SideBar from "@/components/SideBar.vue";
 
 import apiRoutes from "@/router/apiRoutes"
 import axios from "axios";
+axios.defaults.withCredentials = true;
 
 export default {
 
@@ -40,9 +41,11 @@ export default {
 
     methods: {
         getArticles() {
+            let user = this.$store.getters['user/getUser'];
 
-            axios.get( apiRoutes.ARTICLES_URL )
-                .then((response) => {
+            axios.get( apiRoutes.ARTICLES_URL, {
+                'headers': {'Authorization': 'Bearer ' + user.token}
+            }).then((response) => {
                     let data = response.data;
 
                     if( data.errors )
@@ -66,6 +69,7 @@ export default {
     },
 
     mounted() {
+        console.log('mounted');
         this.getArticles();
     },
 };
