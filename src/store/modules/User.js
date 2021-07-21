@@ -1,3 +1,11 @@
+let authToken = localStorage.getItem('authToken');
+let storageUser = localStorage.getItem('user');
+
+if( true ) {
+    
+}
+
+
 export default {
 
     namespaced: true,
@@ -15,12 +23,6 @@ export default {
     actions: {
         setUser(context, data) {
             context.commit('setUser', data);
-
-            console.log(context.state);
-
-            axios.defaults.headers.common = {
-                'Authorization': 'Bearer ' + context.state.user.token
-            };
         }
     },
 
@@ -32,6 +34,6 @@ export default {
         getUser(state) {
             return state.user;
         }
-    }
+    },
 
 }

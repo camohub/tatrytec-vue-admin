@@ -20,8 +20,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
 # Axios
-- LoginForm component get the token from server.
-- Vuex User module setUser action sets the token header for all axios requests.
+- LoginForm component get the token from server and 
+    sets the token to localStorage and axios header for all requests.
 
 # Vuex
 - User module

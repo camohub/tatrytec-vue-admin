@@ -2,7 +2,7 @@
 <template>
     <div id="alerts-wrapper">
         <div v-for="(item, index) in alerts" 
-            :key="index" 
+            :key="index"
             :class="{alert: true, 'alert-danger': item.type == 'error', 'alert-success': item.type == 'success', 'alert-info': item.type != 'success' && item.type != 'error' }" 
             role="alert">
             {{item.msg}}
@@ -26,7 +26,7 @@ export default {
     computed: {
         alerts() {
             return this.$store.state.alerts.alerts;
-        }        
+        }
     },
 
     components: {

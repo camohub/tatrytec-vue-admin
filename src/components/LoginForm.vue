@@ -74,6 +74,7 @@ export default {
                     }
 
                     this.$store.dispatch('user/setUser', data.user);
+                    this.setToken(data.user.token);
                     this.$store.dispatch('alerts/setAlert', {'type': 'success', 'msg': 'Vitajte na palube ' + data.user.name});
                     this.$router.push( {name: 'Dashboard'});
 
@@ -82,6 +83,16 @@ export default {
                     console.log(respose);
                     this.errors = ['Nepodarilo sa vás prihlásiť.'];
                 });
+        },
+
+        setToken(token) {
+            // User can refresh the page so token has to be set 
+            // in permanent storage not in vuex.
+            localStorage.setItem("authToken", token);
+            
+            axios.defaults.headers.common = {
+                'Authorization': 'Bearer ' + token
+            };
         }
     },
 }
