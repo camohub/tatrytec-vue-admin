@@ -1,10 +1,3 @@
-let authToken = localStorage.getItem('authToken');
-let storageUser = localStorage.getItem('user');
-
-if( true ) {
-    
-}
-
 
 export default {
 
@@ -14,24 +7,41 @@ export default {
         user: null
     }),
 
+
     mutations: {
-        setUser(state, data) {
+
+        setUser(state, data) 
+        {
             state.user = data
         }
     },
 
+
     actions: {
-        setUser(context, data) {
+
+        setUser(context, data) 
+        {
             context.commit('setUser', data);
-        }
+        },
+
+        removeUser({ commit }) 
+        {
+            localStorage.removeItem("authToken");
+            commit("setUser", null);
+            console.log('removeUser');
+        },
     },
 
+
     getters: {
-        isLoggedIn(state) {
+
+        isLoggedIn(state) 
+        {
             return !!state.user;
         },
 
-        getUser(state) {
+        getUser(state) 
+        {
             return state.user;
         }
     },

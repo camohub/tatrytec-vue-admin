@@ -2,6 +2,7 @@
     <ul class="col-3" id="sideBar">
 
         <li><router-link to="/">Dashboard</router-link></li>
+        <li><a href="#" @click.prevent="logout()">Logout</a></li>
 
         <h3>Articles</h3>
         <li><router-link to="/articles">Articles</router-link></li>
@@ -26,7 +27,17 @@ export default {
         
     },
 
+    methods: {
+
+        logout() {
+            this.$store.dispatch('user/removeUser');
+            this.$store.dispatch('alerts/setAlert', {type: 'primary', msg: 'Boli ste hodený cez palubu. Ahoj.'});
+            this.$router.push({name: 'Login'});
+        }
+    },
+
     components: {
+
     },
 }
 </script>
