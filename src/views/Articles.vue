@@ -8,6 +8,16 @@
                 <div class="col-9">
                     <h2>Articles</h2>
 
+                    <DataTable id="articlesDataTable"
+                        :data="articles"
+                        :class="'table-bordered table-stripped table-hover'"
+                    >
+                    </DataTable>
+
+
+
+                    
+
                     <ul>
                         <li v-for="(article, index) in articles" :key="index">{{article.title}}</li>
                     </ul>
@@ -24,7 +34,7 @@
 // @ is an alias to /src
 import Header from "@/components/Header.vue";
 import SideBar from "@/components/SideBar.vue";
-
+import DataTable from '@/components/DataTable.vue';
 import apiRoutes from "@/router/apiRoutes";
 
 export default {
@@ -34,6 +44,16 @@ export default {
     data() {
         return {
             articles: [],
+
+            columnDefs: [
+                { field: 'id', sortable: true },
+                { field: 'title', sortable: true },
+                { field: 'visible', sortable: true },
+                { field: 'created_at', sortable: true },
+                { field: 'user.name', sortable: true },
+            ],
+
+            rowData: null
         }
     },
 
@@ -51,7 +71,9 @@ export default {
                         return;
                     }
 
-                    this.articles = data.articles;
+                    this.articles = this.rowData = data.articles;
+                    console.log(this.rowData);
+
                 })
                 .catch((respose) => {
                     console.log(respose);
@@ -63,12 +85,23 @@ export default {
     components: {
         Header,
         SideBar,
+        DataTable,
+    },
+    
+    beforeMount() {
+        this.getArticles();
     },
 
     mounted() {
-        console.log('mounted');
+
         this.getArticles();
     },
 };
 
 </script>
+
+
+<style lang="scss" scoped>
+
+
+</style>

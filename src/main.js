@@ -5,8 +5,14 @@ import store from './store'
 import apiRoutes from "./router/apiRoutes";
 
 import 'bootstrap/dist/css/bootstrap.min.css'
-import 'jquery/src/jquery.js'
+import jQuery from 'jquery/src/jquery.js'
 import 'bootstrap/dist/js/bootstrap.min.js'
+window.$ = window.jQuery = jQuery;
+import dataTables from 'datatables.net/js/jquery.dataTables.min.js';
+window.dt = dataTables;
+//import 'datatables.net';
+import 'datatables.net-dt';
+
 
 // Axios perform checkAuth() call on every
 // page load and set up storage.user if authCheck is true.
@@ -26,7 +32,7 @@ axios.defaults.headers.common = {
  */
 axios.get( apiRoutes.AUTH_CHECK_URL )
     .then(response => {
-        console.log(response);
+        //console.log(response);
 
         if( response.data.user )
         {
@@ -40,19 +46,17 @@ axios.get( apiRoutes.AUTH_CHECK_URL )
         {
             router.push({"name": "Login"});
         }
-
-        console.log('auth check succes');
     })
     .catch(response => {
-        console.log(response);
+        //console.log(response);
         router.push({'name': 'Login'});
     })
     .then(response => {
-        console.log(response);
+        //console.log(response);
 
         // Has to be here otherwise it redirests to login 
         // before auth check is done.
-        router.beforeEach((to, from, next) => {
+        /*router.beforeEach((to, from, next) => {
 
             if (to.name !== 'Login' && !store.getters['user/isLoggedIn']) 
             {
@@ -61,7 +65,7 @@ axios.get( apiRoutes.AUTH_CHECK_URL )
             }
             
             next();
-        })
+        })*/
     });
 
 

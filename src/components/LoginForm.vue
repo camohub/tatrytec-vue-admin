@@ -1,5 +1,5 @@
 <template>
-    <div class="col-12 col-sm-6 offset-sm-3">
+    <div class="col-12 col-sm-6 offset-sm-3 col-lg-4 offset-lg-4">
         <form action="" @submit.prevent="submit">
             <h3>Login</h3>
 
@@ -39,8 +39,8 @@ export default {
 
     data() {
         return {
-            email: 'vladimircamaj@gmail.com', 
-            password: 'vladimir',
+            email: 'aaaaaaaa@aaaaaa.aa',
+            password: 'aaaaaaaa',
 
             errors: [],
         }
