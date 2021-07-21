@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import jQuery from 'jquery/src/jquery.js'
 import 'bootstrap/dist/js/bootstrap.min.js'
 window.$ = window.jQuery = jQuery;
-import dataTables from 'datatables.net/js/jquery.dataTables.min.js';
+import dataTables from 'datatables.net';
 window.dt = dataTables;
 //import 'datatables.net';
 import 'datatables.net-dt';
@@ -49,7 +49,7 @@ axios.get( apiRoutes.AUTH_CHECK_URL )
     })
     .catch(response => {
         //console.log(response);
-        router.push({'name': 'Login'});
+        //router.push({'name': 'Login'});
     })
     .then(response => {
         //console.log(response);
