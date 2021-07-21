@@ -48,10 +48,12 @@ export default {
                 "$5,300"
             ]
         ];
-        $('#'+this.id).DataTable({
-            data: data,
-        });
-    },
+		$(document).ready( function () {
+			$('#'+this.id).DataTable({
+				data: data,
+			});
+		});
+	},
 }
 </script>
 
