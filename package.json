@@ -17,6 +17,7 @@
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {
+    "@types/datatables.net": "^1.10.20",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",

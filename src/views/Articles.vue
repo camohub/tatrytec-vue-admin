@@ -8,15 +8,13 @@
                 <div class="col-9">
                     <h2>Articles</h2>
 
-                    <DataTable id="articlesDataTable"
-                        :data="articles"
+                    <DataTable :id="'articlesDataTable'"
                         :class="'table-bordered table-stripped table-hover'"
+                        :data="articles"
+                        :fields="fields"
                     >
                     </DataTable>
 
-
-
-                    
 
                     <ul>
                         <li v-for="(article, index) in articles" :key="index">{{article.title}}</li>
@@ -45,7 +43,7 @@ export default {
         return {
             articles: [],
 
-            columnDefs: [
+            fields: [
                 { field: 'id', sortable: true },
                 { field: 'title', sortable: true },
                 { field: 'visible', sortable: true },
@@ -71,8 +69,7 @@ export default {
                         return;
                     }
 
-                    this.articles = this.rowData = data.articles;
-                    console.log(this.rowData);
+                    this.articles = data.articles;
 
                 })
                 .catch((respose) => {
@@ -94,7 +91,6 @@ export default {
 
     mounted() {
 
-        this.getArticles();
     },
 };
 

@@ -4,14 +4,12 @@ import router from './router'
 import store from './store'
 import apiRoutes from "./router/apiRoutes";
 
+
+
+let $ = require( 'jquery' );
 import 'bootstrap/dist/css/bootstrap.min.css'
-import jQuery from 'jquery/src/jquery.js'
 import 'bootstrap/dist/js/bootstrap.min.js'
-window.$ = window.jQuery = jQuery;
-import dataTables from 'datatables.net';
-window.dt = dataTables;
-//import 'datatables.net';
-import 'datatables.net-dt';
+
 
 
 // Axios perform checkAuth() call on every
@@ -49,14 +47,14 @@ axios.get( apiRoutes.AUTH_CHECK_URL )
     })
     .catch(response => {
         //console.log(response);
-        //router.push({'name': 'Login'});
+        router.push({'name': 'Login'});
     })
     .then(response => {
         //console.log(response);
 
         // Has to be here otherwise it redirests to login 
         // before auth check is done.
-        /*router.beforeEach((to, from, next) => {
+        router.beforeEach((to, from, next) => {
 
             if (to.name !== 'Login' && !store.getters['user/isLoggedIn']) 
             {
@@ -65,7 +63,7 @@ axios.get( apiRoutes.AUTH_CHECK_URL )
             }
             
             next();
-        })*/
+        })
     });
 
 

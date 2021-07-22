@@ -3,10 +3,15 @@
     <div id="alerts-wrapper">
         <div v-for="(item, index) in alerts" 
             :key="index"
-            :class="{alert: true, 'alert-danger': item.type == 'error', 'alert-success': item.type == 'success', 'alert-info': item.type != 'success' && item.type != 'error' }" 
+            :class="{
+                alert: true, 
+                'alert-danger': item.type == 'error', 
+                'alert-success': item.type == 'success', 
+                'alert-info': item.type != 'success' && item.type != 'error' 
+            }" 
             role="alert">
             {{item.msg}}
-            <button v-if="!item.important" type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <button v-if="!item.important" @click.prevent="remove(item.id)" type="button" class="close">×</button>
         </div>
     </div>
 </template>
@@ -26,6 +31,12 @@ export default {
     computed: {
         alerts() {
             return this.$store.state.alerts.alerts;
+        }
+    },
+
+    methods: {
+        remove(id) {
+            this.$store.dispatch('alerts/removeAlert', id);
         }
     },
 

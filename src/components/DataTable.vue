@@ -1,12 +1,20 @@
 
 <template>
     <div class="table-responsive">
-        <table :class="classes" :id="id"></table>
+        <table :id="id" :class="classes"></table>
     </div>
 </template>
 
 
 <script>
+
+//Bootstrap and jQuery libraries
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'jquery/dist/jquery.min.js';
+//Datatable Modules
+import "datatables.net-dt/js/dataTables.dataTables"
+import "datatables.net-dt/css/jquery.dataTables.min.css"
+import $ from 'jquery'; 
 
 export default {
 
@@ -29,29 +37,19 @@ export default {
 
     },
 
-    mounted() {
-        var data = [
-            [
-                "Tiger Nixon",
-                "System Architect",
-                "Edinburgh",
-                "5421",
-                "2011/04/25",
-                "$3,120"
-            ],
-            [
-                "Garrett Winters",
-                "Director",
-                "Edinburgh",
-                "8422",
-                "2011/07/25",
-                "$5,300"
-            ]
-        ];
+    created() {
+        
+        let id = this.id;
+        let data = this.data;
+        let fields = this.fields;
+
 		$(document).ready( function () {
-			$('#'+this.id).DataTable({
+			let dataTable = $('#'+id).DataTable({
 				data: data,
+                columns: fields,
 			});
+
+            console.log(dataTable);
 		});
 	},
 }
