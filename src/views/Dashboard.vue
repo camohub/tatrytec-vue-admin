@@ -6,7 +6,7 @@
         <div class="row">
             <SideBar />
 
-            <div class="col-9">
+            <div class="col-9 col-md-10">
                 <h2>Dashboard</h2>
             </div>        
         </div>

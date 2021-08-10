@@ -7,10 +7,13 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/vue-fontawesome": "^3.0.0-4",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "core-js": "^3.6.5",
     "datatables.net": "^1.10.25",
+    "datatables.net-bs4": "^3.2.2",
     "datatables.net-dt": "^1.1.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",

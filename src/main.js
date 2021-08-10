@@ -6,7 +6,8 @@ import apiRoutes from "./router/apiRoutes";
 
 
 
-let $ = require( 'jquery' );
+//let $ = require( 'jquery' );
+window.$ = window.jQuery = require('jquery');
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 
@@ -18,7 +19,7 @@ import axios from "axios"
 window.axios = axios;
 axios.defaults.withCredentials = true;
 
-let authToken = localStorage.getItem('authToken');            
+let authToken = localStorage.getItem('authToken');        
 axios.defaults.headers.common = {
     'Authorization': 'Bearer ' + authToken
 };

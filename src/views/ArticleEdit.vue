@@ -5,10 +5,8 @@
             <div class="row">
                 <SideBar />
 
-                <div class="col-9 col-md-10">
-                    <h2>Articles</h2>
-
-                    <ArticlesDataTable />
+                <div class="col-9">
+                    <h2>Article edit</h2>
                 </div>
             </div>
         </div>
@@ -21,31 +19,15 @@
 // @ is an alias to /src
 import Header from "@/components/Header.vue";
 import SideBar from "@/components/SideBar.vue";
-import ArticlesDataTable from '@/components/ArticlesDataTable.vue';
 
 export default {
 
-    name: "Articles",
-
-    data() {
-        return {}
-    },
-
-    methods: {
-
-    },
+    name: "Article create",
 
     components: {
         Header,
         SideBar,
-        ArticlesDataTable,
-    }
+    },
 };
 
 </script>
-
-
-<style lang="scss" scoped>
-
-
-</style>

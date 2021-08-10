@@ -10,8 +10,8 @@
                 'alert-info': item.type != 'success' && item.type != 'error' 
             }" 
             role="alert">
-            {{item.msg}}
             <button v-if="!item.important" @click.prevent="remove(item.id)" type="button" class="close">×</button>
+            {{item.msg}}
         </div>
     </div>
 </template>

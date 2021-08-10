@@ -1,0 +1,1523 @@
+{
+    "items": [
+        {
+            "extra_data": {
+                "abtest": {
+                    "enabled": false,
+                    "data": {
+                        "image": "",
+                        "title": "",
+                        "title-short": ""
+                    },
+                    "updated": {
+                        "title": "2021-07-19 19:19:21",
+                        "image": "2021-07-19 19:07:48",
+                        "title-short": "2021-07-19 19:07:48"
+                    },
+                    "result": {
+                        "title": "",
+                        "image": "",
+                        "title-short": ""
+                    }
+                },
+                "titles": {
+                    "short": "Megakauzy: Bitka in\u0161pekcie s pol\u00edciou?",
+                    "lower": "",
+                    "upper": "",
+                    "cas": ""
+                },
+                "external_url": "",
+                "place": "",
+                "sponsored_by": "",
+                "facebook_image": "FeSu7zhDSi3wi8iiK2HX3A",
+                "video_autoplay": false,
+                "video_autoplay_sound": false,
+                "video_article_embed_url": "",
+                "generated_keywords": [],
+                "age_pemission": 0,
+                "content_type": "4",
+                "video_logo": "",
+                "gemius": {
+                    "category": 0
+                },
+                "category_url": "\/spravy\/"
+            },
+            "id": 908839,
+            "title": "Odveta in\u0161pekcie vy\u0161etrovate\u013eom ve\u013ek\u00fdch k\u00e1uz? \u0160\u00edri sa spr\u00e1va, \u017ee maj\u00fa zadr\u017ea\u0165 Lip\u0161ica a spol.",
+            "seo_title": "",
+            "image_id": "wR0H72KLSRep35s9dOVFTg",
+            "category_id": 2,
+            "perex": "Policajtov, ktor\u00ed pracuj\u00fa na citliv\u00fdch kauz\u00e1ch ako O\u010distec, M\u00fdtnik \u010di Jud\u00e1\u0161, si predvolal na pohovor aj N\u00e1rodn\u00fd bezpe\u010dnostn\u00fd \u00farad, ktor\u00fd rozhoduje o ich previerkach.",
+            "seo_description": "",
+            "project": "aktuality",
+            "publish_up": 1626714720,
+            "modified": 1626763010,
+            "alias": "odveta-inspekcie-vysetrovatelom-velkych-kauz-siri-sa-sprava-ze-maju-zadrzat-lipsica-a-spol",
+            "state": 2,
+            "flags": [
+                "5",
+                "8",
+                "1120"
+            ],
+            "related": [],
+            "url": "https:\/\/www.aktuality.sk\/clanok\/908839\/odveta-inspekcie-vysetrovatelom-velkych-kauz-siri-sa-sprava-ze-maju-zadrzat-lipsica-a-spol\/",
+            "image": {
+                "id": "wR0H72KLSRep35s9dOVFTg",
+                "title": "Daniel Lip\u0161ic v rel\u00e1ci\u00ed Na Rovinu",
+                "elastic_source": {
+                    "extension": "jpg",
+                    "project": "aktuality",
+                    "deleted": false,
+                    "description": "",
+                    "filename": "Lips\u030cic-20.jpg",
+                    "keywords": [
+                        "daniel lipsic",
+                        "na rovinu",
+                        "marek vagovic"
+                    ],
+                    "source": "Branislav W\u00e1clav \/ Aktuality.sk",
+                    "title": "Daniel Lip\u0161ic v rel\u00e1ci\u00ed Na Rovinu",
+                    "user": "impo",
+                    "create_time": 1618579625,
+                    "update_time": 1618579654,
+                    "config": "{\"iw\":4500,\"ih\":3000,\"if\":[\"2560\",\"1280\",\"640\",\"320\"],\"iwm\":0}",
+                    "ratio": 1.5,
+                    "resolution": 13500000,
+                    "created_at": "2021-04-16T15:27:05+02:00",
+                    "updated_at": "2021-07-28T09:47:13+02:00"
+                },
+                "source": "Branislav W\u00e1clav \/ Aktuality.sk",
+                "version": 2,
+                "content": "",
+                "imageUrls": {
+                    "original": "https:\/\/t.aimg.sk\/magaziny\/wR0H72KLSRep35s9dOVFTg.jpg?t=&h=ebXvTXFV3ERICQXaeT-kSA&e=2145916800&v=2"
+                }
+            },
+            "category": {
+                "id": 2,
+                "alias": "spravy",
+                "description": "",
+                "flags": [],
+                "children_ids": [
+                    208,
+                    207,
+                    177,
+                    176,
+                    169,
+                    12,
+                    205,
+                    71,
+                    24,
+                    25,
+                    101,
+                    103,
+                    213,
+                    306,
+                    42,
+                    209,
+                    172
+                ],
+                "keywords": [],
+                "name": "Spr\u00e1vy",
+                "parent_id": 0,
+                "seo_description": "Aktu\u00e1lne spravodajstvo z domova a zo sveta. Koment\u00e1re k udalostiam, spr\u00e1vy z va\u0161ich regi\u00f3nov, ekonomick\u00e9 spravodajstvo, krimi spr\u00e1vy ..",
+                "seo_title": "Najnov\u0161ie spr\u00e1vy a koment\u00e1re z domova \u010di zahrani\u010dia",
+                "state": 2,
+                "exists": true,
+                "url": "\/spravy\/",
+                "children": []
+            },
+            "project_instance": {
+                "name": "Aktuality",
+                "alias": "aktuality",
+                "id": 2,
+                "url": "https:\/\/www.aktuality.sk"
+            },
+            "comment_count": 47,
+            "share_count": 4657,
+            "format": 1,
+            "views": 165409,
+            "keywords": [
+                "policia",
+                "prokuratura",
+                "specialny prokurator",
+                "daniel lipsic",
+                "lipsic",
+                "ocistec",
+                "judas",
+                "mytnik",
+                "santusova",
+                "inspekcia",
+                "zilinka",
+                "maros zilinka"
+            ],
+            "authors_ids": [
+                "5164"
+            ],
+            "rating": {
+                "avg": 0,
+                "count": 0,
+                "like": 0
+            },
+            "related_topics": []
+        },
+        {
+            "extra_data": {
+                "abtest": {
+                    "enabled": false,
+                    "data": {
+                        "image": "",
+                        "title": "",
+                        "title-short": ""
+                    },
+                    "updated": {
+                        "title": "2021-07-18 22:51:49",
+                        "image": "2021-07-18 23:05:24",
+                        "title-short": "2021-07-18 23:05:24"
+                    },
+                    "result": {
+                        "title": "",
+                        "image": "",
+                        "title-short": ""
+                    }
+                },
+                "titles": {
+                    "short": "Zomrel Milan Lasica",
+                    "lower": "",
+                    "upper": "",
+                    "cas": ""
+                },
+                "external_url": "",
+                "place": "Bratislava",
+                "sponsored_by": "",
+                "facebook_image": "wi3lA9AgRtXSL9-v_YFsaQ",
+                "video_autoplay": false,
+                "video_autoplay_sound": false,
+                "video_article_embed_url": "",
+                "generated_keywords": [],
+                "age_pemission": 0,
+                "content_type": "1",
+                "video_logo": "",
+                "gemius": {
+                    "category": 0
+                },
+                "category_url": "\/kultura\/"
+            },
+            "id": 908641,
+            "title": "Zomrel herec a humorista Milan Lasica",
+            "seo_title": "",
+            "image_id": "wi3lA9AgRtXSL9-v_YFsaQ",
+            "category_id": 7,
+            "perex": "Vo veku 81 rokov zomrel popul\u00e1rny komik, herec a spev\u00e1k Milan Lasica. ",
+            "seo_description": "",
+            "project": "aktuality",
+            "publish_up": 1626641400,
+            "modified": 1626644516,
+            "alias": "zomrel-herec-a-humorista-milan-lasica",
+            "state": 2,
+            "flags": [
+                "5",
+                "8",
+                "29"
+            ],
+            "related": [],
+            "url": "https:\/\/www.aktuality.sk\/clanok\/908641\/zomrel-herec-a-humorista-milan-lasica\/",
+            "image": {
+                "id": "wi3lA9AgRtXSL9-v_YFsaQ",
+                "title": "Milan Lasica",
+                "elastic_source": {
+                    "extension": "jpg",
+                    "project": "aktuality",
+                    "deleted": false,
+                    "description": "",
+                    "filename": "31012019_dejiny_divadla_4590181.jpg",
+                    "keywords": [
+                        "milan lasica"
+                    ],
+                    "source": "TASR",
+                    "title": "Milan Lasica",
+                    "user": "impo",
+                    "create_time": 1626642305,
+                    "update_time": 1626642321,
+                    "config": "{\"iw\":4079,\"ih\":2795,\"if\":[\"2560\",\"1280\",\"640\",\"320\"],\"iwm\":0,\"ic\":{\"x\":0,\"y\":108,\"w\":4079,\"h\":2290}}",
+                    "ratio": 1.459391771019678,
+                    "resolution": 11400805,
+                    "created_at": "2021-07-18T23:05:05+02:00",
+                    "updated_at": "2021-07-28T09:47:13+02:00"
+                },
+                "source": "TASR",
+                "version": 3,
+                "content": "",
+                "imageUrls": {
+                    "original": "https:\/\/t.aimg.sk\/magaziny\/wi3lA9AgRtXSL9-v_YFsaQ.jpg?t=&h=1oe_ycEFy-Lc8f04CWZI0w&e=2145916800&v=3"
+                }
+            },
+            "category": {
+                "id": 7,
+                "alias": "kultura",
+                "description": "",
+                "flags": [],
+                "children_ids": [
+                    112,
+                    126,
+                    3,
+                    77,
+                    80,
+                    41
+                ],
+                "keywords": [],
+                "name": "Kult\u00fara",
+                "parent_id": 0,
+                "seo_description": "Tie najnov\u0161ie inform\u00e1cie z kult\u00fary na Slovensku a vo svete. Kni\u017en\u00e9 novinky, filmov\u00e9 premi\u00e9ry \u010di divadeln\u00e9 predstavenia. To v\u0161etko na spravodajskom port\u00e1li Aktuality.sk",
+                "seo_title": "Kult\u00fara na Slovensku a vo svete",
+                "state": 2,
+                "exists": true,
+                "url": "\/kultura\/",
+                "children": []
+            },
+            "project_instance": {
+                "name": "Aktuality",
+                "alias": "aktuality",
+                "id": 2,
+                "url": "https:\/\/www.aktuality.sk"
+            },
+            "comment_count": 38,
+            "share_count": 14611,
+            "format": 1,
+            "views": 146615,
+            "keywords": [
+                "lasica"
+            ],
+            "authors_ids": [
+                "5472"
+            ],
+            "rating": {
+                "avg": 0,
+                "count": 0,
+                "like": 0
+            },
+            "related_topics": []
+        },
+        {
+            "extra_data": {
+                "abtest": {
+                    "enabled": true,
+                    "data": {
+                        "image": "alDLC_1HQcWhJ6Cr5QF9tg",
+                        "title": "",
+                        "title-short": "Ma\u010fari: NAKA si \u010doskoro pr\u00edde i po Fica"
+                    },
+                    "updated": {
+                        "title": "2021-07-17 08:18:29",
+                        "image": "2021-07-17 08:18:29",
+                        "title-short": "2021-07-17 08:18:29"
+                    },
+                    "result": {
+                        "title": "",
+                        "image": "",
+                        "title-short": ""
+                    }
+                },
+                "titles": {
+                    "short": "Ma\u010fari: Aj po Fica si pr\u00edde \u010doskoro NAKA",
+                    "lower": "",
+                    "upper": "",
+                    "cas": ""
+                },
+                "external_url": "",
+                "place": "",
+                "sponsored_by": "",
+                "facebook_image": "D9DsycTQRdiwDMLRu90j6Q",
+                "video_autoplay": false,
+                "video_autoplay_sound": false,
+                "video_article_embed_url": "",
+                "generated_keywords": [],
+                "age_pemission": 0,
+                "content_type": "5",
+                "video_logo": "",
+                "gemius": {
+                    "category": 0
+                },
+                "category_url": "https:\/\/www.aktuality.sk\/spravy\/komentare\/"
+            },
+            "id": 906812,
+            "title": "T\u00fd\u017ede\u0148 vo svetov\u00fdch m\u00e9di\u00e1ch: Pod\u013ea Ma\u010farov si aj po Fica \u010doskoro pr\u00edde NAKA",
+            "seo_title": "",
+            "image_id": "D9DsycTQRdiwDMLRu90j6Q",
+            "category_id": 42,
+            "perex": "V tomto preh\u013eade sa okrem t\u00e9my z titulku dozviete aj o pr\u00e1vnom konan\u00ed EK vo\u010di Ma\u010farsku a Po\u013esku \u010di demon\u0161tr\u00e1ci\u00e1ch na Kube. No a kon\u010di\u0165 budeme v Litve, ktor\u00e1 \u010del\u00ed zv\u00fd\u0161en\u00e9mu po\u010dtu imigrantov zo susedn\u00e9ho Bieloruska. ",
+            "seo_description": "",
+            "project": "aktuality",
+            "publish_up": 1626505800,
+            "modified": 1626520030,
+            "alias": "tyzden-vo-svetovych-mediach-podla-madarov-si-aj-po-fica-coskoro-pride-naka",
+            "state": 2,
+            "flags": [
+                "5",
+                "8",
+                "1003",
+                "1006",
+                "1120"
+            ],
+            "related": [],
+            "url": "https:\/\/www.aktuality.sk\/clanok\/906812\/tyzden-vo-svetovych-mediach-podla-madarov-si-aj-po-fica-coskoro-pride-naka\/",
+            "image": {
+                "id": "D9DsycTQRdiwDMLRu90j6Q",
+                "title": "Robert Fico (v\u013eavo) s Robertom Kali\u0148\u00e1kom",
+                "elastic_source": {
+                    "extension": "jpg",
+                    "project": "aktuality",
+                    "deleted": false,
+                    "description": "",
+                    "filename": "23oktober2018_NRSR_10565116.jpg",
+                    "keywords": [
+                        "fico",
+                        "kalinak"
+                    ],
+                    "source": "TASR",
+                    "title": "Robert Fico (v\u013eavo) s Robertom Kali\u0148\u00e1kom",
+                    "user": "impo",
+                    "create_time": 1540290606,
+                    "update_time": 1540290703,
+                    "config": "{\"iw\":1200,\"ih\":957,\"if\":[\"640\",\"320\"],\"iwm\":0}",
+                    "ratio": 1.2539184952978057,
+                    "resolution": 1148400,
+                    "created_at": "2018-10-23T12:30:06+02:00",
+                    "updated_at": "2021-07-28T09:47:13+02:00"
+                },
+                "source": "TASR",
+                "version": 1,
+                "content": "",
+                "imageUrls": {
+                    "original": "https:\/\/t.aimg.sk\/magaziny\/D9DsycTQRdiwDMLRu90j6Q.jpg?t=&h=7Q1IHYE_veVjDlSc4FDawQ&e=2145916800&v=1"
+                }
+            },
+            "category": {
+                "id": 42,
+                "alias": "komentare",
+                "description": "",
+                "flags": [
+                    1
+                ],
+                "children_ids": [],
+                "keywords": [],
+                "name": "Koment\u00e1re",
+                "parent_id": 2,
+                "seo_description": "Tie najd\u00f4le\u017eitej\u0161ie koment\u00e1re k aktu\u00e1lnym probl\u00e9mom na Slovensku i vo svete. Pre\u010d\u00edtajte si n\u00e1zory najzn\u00e1mej\u0161\u00edch koment\u00e1rov na aktu\u00e1lne dianie. Aktuality.sk",
+                "seo_title": "Koment\u00e1re k aktu\u00e1lnym udalostiam",
+                "state": 2,
+                "exists": true,
+                "url": "https:\/\/www.aktuality.sk\/spravy\/komentare\/",
+                "children": []
+            },
+            "project_instance": {
+                "name": "Aktuality",
+                "alias": "aktuality",
+                "id": 2,
+                "url": "https:\/\/www.aktuality.sk"
+            },
+            "comment_count": 68,
+            "share_count": 6381,
+            "format": 1,
+            "views": 143671,
+            "keywords": [
+                "tyzden vo svetovych mediach"
+            ],
+            "authors_ids": [
+                "64"
+            ],
+            "rating": {
+                "avg": 0,
+                "count": 0,
+                "like": 0
+            },
+            "related_topics": []
+        },
+        {
+            "extra_data": {
+                "abtest": {
+                    "enabled": false,
+                    "data": {
+                        "image": "",
+                        "title": "",
+                        "title-short": ""
+                    },
+                    "updated": {
+                        "title": "2021-07-14 21:51:58",
+                        "image": "2021-07-13 10:49:51",
+                        "title-short": "2021-07-13 10:49:51"
+                    },
+                    "result": {
+                        "title": "",
+                        "image": "",
+                        "title-short": ""
+                    }
+                },
+                "titles": {
+                    "short": "Odhalenie: \u010c\u00ednske pr\u00e1\u010dky pe\u0148az\u00ed a Mak\u00f3",
+                    "lower": "",
+                    "upper": "",
+                    "cas": ""
+                },
+                "external_url": "",
+                "place": "Bratislava",
+                "sponsored_by": "",
+                "facebook_image": "B7bhQbx5SA27YbUpvO8a4A",
+                "video_autoplay": false,
+                "video_autoplay_sound": false,
+                "video_article_embed_url": "",
+                "generated_keywords": [],
+                "age_pemission": 0,
+                "content_type": "5",
+                "video_logo": "",
+                "gemius": {
+                    "category": 0
+                },
+                "category_url": "https:\/\/www.aktuality.sk\/spravy\/krimi\/"
+            },
+            "id": 907088,
+            "title": "Od mafie cez tajn\u00fdch a\u017e po \u0161pi\u010dky daniarov. Ako Suchoba, B\u00f6hm a in\u00ed Slov\u00e1ci to\u010dili mili\u00f3ny v \u010d\u00ednskej pr\u00e1\u010dke",
+            "seo_title": "",
+            "image_id": "B7bhQbx5SA27YbUpvO8a4A",
+            "category_id": 12,
+            "perex": "Nenoste mi tu kopy 5- a 10-euroviek, mal sa pos\u0165a\u017eova\u0165 b\u00fdval\u00fd policajn\u00fd \u0161\u00e9f, ke\u010f k nemu dorazil pravideln\u00fd \u00faplatk\u00e1rsky mesa\u010dn\u00fd \u201epau\u0161\u00e1l\u201c od d\u00e9peh\u00e1\u010dkarov. Inak sa ale nedalo, hotovos\u0165 v mal\u00fdch bankovk\u00e1ch zrejme pr\u00e1ve dorazila z \u00e1zijskej pr\u00e1\u010dky pe\u0148az\u00ed. Hotovos\u0165 mal pod\u013ea svedkov nosi\u0165 od \u010c\u00ed\u0148anov aj \u013dudov\u00edt Mak\u00f3.",
+            "seo_description": "",
+            "project": "aktuality",
+            "publish_up": 1626321600,
+            "modified": 1626367950,
+            "alias": "od-mafie-cez-tajnych-az-po-spicky-u-daniarov-ako-slovaci-roky-peru-miliony-eur-cez-aziu",
+            "state": 2,
+            "flags": [
+                "3",
+                "5",
+                "8",
+                "1003",
+                "1120"
+            ],
+            "related": [],
+            "url": "https:\/\/www.aktuality.sk\/clanok\/907088\/od-mafie-cez-tajnych-az-po-spicky-u-daniarov-ako-slovaci-roky-peru-miliony-eur-cez-aziu\/",
+            "image": {
+                "id": "B7bhQbx5SA27YbUpvO8a4A",
+                "title": "",
+                "elastic_source": {
+                    "extension": "jpg",
+                    "project": "aktuality",
+                    "deleted": false,
+                    "description": "",
+                    "filename": "grafika_9.jpg",
+                    "keywords": [
+                        "cinska pracka"
+                    ],
+                    "source": "Aktuality.sk",
+                    "title": "",
+                    "user": "impo",
+                    "create_time": 1626166001,
+                    "update_time": 1626166113,
+                    "config": "{\"iw\":1920,\"ih\":1080,\"if\":[\"1280\",\"640\",\"320\"],\"iwm\":0}",
+                    "ratio": 1.7777777777777777,
+                    "resolution": 2073600,
+                    "created_at": "2021-07-13T10:46:41+02:00",
+                    "updated_at": "2021-07-28T09:47:13+02:00"
+                },
+                "source": "Aktuality.sk",
+                "version": 2,
+                "content": "",
+                "imageUrls": {
+                    "original": "https:\/\/t.aimg.sk\/magaziny\/B7bhQbx5SA27YbUpvO8a4A.jpg?t=&h=i1b5cIqBF9dAKdnfbqS3Bg&e=2145916800&v=2"
+                }
+            },
+            "category": {
+                "id": 12,
+                "alias": "krimi",
+                "description": "",
+                "flags": [],
+                "children_ids": [],
+                "keywords": [],
+                "name": "Krimi",
+                "parent_id": 2,
+                "seo_description": "Aktu\u00e1lne inform\u00e1cie z oblasti krimi na Slovensku. Tie najd\u00f4le\u017eitej\u0161ie \u010dl\u00e1nky o aktu\u00e1lnom dian\u00ed z krimin\u00e1lneho poh\u013eadu online na Aktuality.sk",
+                "seo_title": "Aktu\u00e1lne spravodajstvo zo sekcie Krimi",
+                "state": 2,
+                "exists": true,
+                "url": "https:\/\/www.aktuality.sk\/spravy\/krimi\/",
+                "parent_category": {
+                    "id": 2,
+                    "alias": "spravy",
+                    "description": "",
+                    "flags": [],
+                    "children_ids": [
+                        208,
+                        207,
+                        177,
+                        176,
+                        169,
+                        12,
+                        205,
+                        71,
+                        24,
+                        25,
+                        101,
+                        103,
+                        213,
+                        306,
+                        42,
+                        209,
+                        172
+                    ],
+                    "keywords": [],
+                    "name": "Spr\u00e1vy",
+                    "parent_id": 0,
+                    "seo_description": "Aktu\u00e1lne spravodajstvo z domova a zo sveta. Koment\u00e1re k udalostiam, spr\u00e1vy z va\u0161ich regi\u00f3nov, ekonomick\u00e9 spravodajstvo, krimi spr\u00e1vy ..",
+                    "seo_title": "Najnov\u0161ie spr\u00e1vy a koment\u00e1re z domova \u010di zahrani\u010dia",
+                    "state": 2,
+                    "exists": true,
+                    "url": "",
+                    "children": []
+                },
+                "children": []
+            },
+            "project_instance": {
+                "name": "Aktuality",
+                "alias": "aktuality",
+                "id": 2,
+                "url": "https:\/\/www.aktuality.sk"
+            },
+            "comment_count": 68,
+            "share_count": 4617,
+            "format": 1,
+            "views": 126359,
+            "keywords": [
+                "cina",
+                "sis",
+                "slovenska informacna sluzba",
+                "pranie spinavych penazi",
+                "danove podvody",
+                "bohm",
+                "kemeny",
+                "lorenc",
+                "takacovci"
+            ],
+            "authors_ids": [
+                "5203",
+                "5175",
+                "6103"
+            ],
+            "rating": {
+                "avg": 0,
+                "count": 0,
+                "like": 0
+            },
+            "related_topics": []
+        },
+        {
+            "extra_data": {
+                "abtest": {
+                    "enabled": false,
+                    "data": {
+                        "image": "",
+                        "title": "",
+                        "title-short": ""
+                    },
+                    "updated": {
+                        "title": "2021-07-13 15:22:52",
+                        "image": "2021-07-13 15:23:27",
+                        "title-short": "2021-07-13 15:23:27"
+                    },
+                    "result": {
+                        "title": "",
+                        "image": "",
+                        "title-short": ""
+                    }
+                },
+                "titles": {
+                    "short": "Hlas m\u00e1 peniaze aj od sestry Pellegriniho",
+                    "lower": "",
+                    "upper": "",
+                    "cas": ""
+                },
+                "external_url": "",
+                "place": "",
+                "sponsored_by": "",
+                "facebook_image": "xi9E-_SPSaTX94BI4lUY4w",
+                "video_autoplay": false,
+                "video_autoplay_sound": false,
+                "video_article_embed_url": "",
+                "generated_keywords": [],
+                "age_pemission": 0,
+                "content_type": "4",
+                "video_logo": "",
+                "gemius": {
+                    "category": 0
+                },
+                "category_url": "\/spravy\/"
+            },
+            "id": 907329,
+            "title": "Z \u010doho \u017eije Hlas: stranu financuje Pellegriniho sestra aj obvinen\u00fd \u017diga. Na vo\u013eby to nesta\u010d\u00ed",
+            "seo_title": "",
+            "image_id": "_c761mROTirCRbKXvqyq_g",
+            "category_id": 2,
+            "perex": "Na kampane pred vo\u013ebami min\u00fa politick\u00e9 strany mili\u00f3ny eur. Kde ich chce z\u00edska\u0165 Peter Pellegrini, si zatia\u013e nech\u00e1va pre seba.",
+            "seo_description": "",
+            "project": "aktuality",
+            "publish_up": 1626732600,
+            "modified": 1626779607,
+            "alias": "z-coho-zije-hlas-stranu-financuje-pellegriniho-sestra-aj-obvineny-ziga-na-volby-to-nestaci",
+            "state": 2,
+            "flags": [
+                "5",
+                "8",
+                "1003",
+                "1120"
+            ],
+            "related": [],
+            "url": "https:\/\/www.aktuality.sk\/clanok\/907329\/z-coho-zije-hlas-stranu-financuje-pellegriniho-sestra-aj-obvineny-ziga-na-volby-to-nestaci\/",
+            "image": {
+                "id": "_c761mROTirCRbKXvqyq_g",
+                "title": "Peter Pellegrini so svojou sestrou Evou Pellegrini",
+                "elastic_source": {
+                    "extension": "jpg",
+                    "project": "aktuality",
+                    "deleted": false,
+                    "description": "",
+                    "filename": "pelle_eva.jpeg",
+                    "keywords": [
+                        "pellegrini"
+                    ],
+                    "source": "Facebook.com (Peter Pellegrini)",
+                    "title": "Peter Pellegrini so svojou sestrou Evou Pellegrini",
+                    "user": "impo",
+                    "create_time": 1626182472,
+                    "update_time": 1626182558,
+                    "config": "{\"iw\":1430,\"ih\":1430,\"if\":[\"640\",\"320\"],\"iwm\":0}",
+                    "ratio": 1,
+                    "resolution": 2044900,
+                    "created_at": "2021-07-13T15:21:12+02:00",
+                    "updated_at": "2021-07-28T09:47:13+02:00"
+                },
+                "source": "Facebook.com (Peter Pellegrini)",
+                "version": 2,
+                "content": "",
+                "imageUrls": {
+                    "original": "https:\/\/t.aimg.sk\/magaziny\/_c761mROTirCRbKXvqyq_g.jpg?t=&h=LAShlIdwQ1uWLdpCjSctSA&e=2145916800&v=2"
+                }
+            },
+            "category": {
+                "id": 2,
+                "alias": "spravy",
+                "description": "",
+                "flags": [],
+                "children_ids": [
+                    208,
+                    207,
+                    177,
+                    176,
+                    169,
+                    12,
+                    205,
+                    71,
+                    24,
+                    25,
+                    101,
+                    103,
+                    213,
+                    306,
+                    42,
+                    209,
+                    172
+                ],
+                "keywords": [],
+                "name": "Spr\u00e1vy",
+                "parent_id": 0,
+                "seo_description": "Aktu\u00e1lne spravodajstvo z domova a zo sveta. Koment\u00e1re k udalostiam, spr\u00e1vy z va\u0161ich regi\u00f3nov, ekonomick\u00e9 spravodajstvo, krimi spr\u00e1vy ..",
+                "seo_title": "Najnov\u0161ie spr\u00e1vy a koment\u00e1re z domova \u010di zahrani\u010dia",
+                "state": 2,
+                "exists": true,
+                "url": "\/spravy\/",
+                "children": []
+            },
+            "project_instance": {
+                "name": "Aktuality",
+                "alias": "aktuality",
+                "id": 2,
+                "url": "https:\/\/www.aktuality.sk"
+            },
+            "comment_count": 49,
+            "share_count": 2816,
+            "format": 1,
+            "views": 107569,
+            "keywords": [
+                "hlas",
+                "hlas - socialna demokracia",
+                "peter pellegrini",
+                "pellegrini",
+                "smer"
+            ],
+            "authors_ids": [
+                "131"
+            ],
+            "rating": {
+                "avg": 0,
+                "count": 0,
+                "like": 0
+            },
+            "related_topics": []
+        },
+        {
+            "extra_data": {
+                "abtest": {
+                    "enabled": false,
+                    "data": {
+                        "image": "",
+                        "title": "",
+                        "title-short": ""
+                    },
+                    "updated": {
+                        "title": "2021-07-19 17:47:50",
+                        "image": "2021-07-19 13:11:58",
+                        "title-short": "2021-07-19 13:11:58"
+                    },
+                    "result": {
+                        "title": "",
+                        "image": "",
+                        "title-short": ""
+                    }
+                },
+                "titles": {
+                    "short": "Vlak do Chorv\u00e1tska me\u0161kal 11 hod\u00edn",
+                    "lower": "",
+                    "upper": "",
+                    "cas": ""
+                },
+                "external_url": "",
+                "place": "Bratislava",
+                "sponsored_by": "",
+                "facebook_image": "W2WM2_otTiP2lbT-eX09XQ",
+                "video_autoplay": false,
+                "video_autoplay_sound": false,
+                "video_article_embed_url": "",
+                "generated_keywords": [],
+                "age_pemission": 0,
+                "content_type": "5",
+                "video_logo": "",
+                "gemius": {
+                    "category": 0
+                },
+                "category_url": "\/cestovanie\/"
+            },
+            "id": 908778,
+            "title": "Vlak do Chorv\u00e1tska me\u0161kal 11 hod\u00edn, dovolenk\u00e1rom vr\u00e1tia polovicu n\u00e1kladov",
+            "seo_title": "",
+            "image_id": "W2WM2_otTiP2lbT-eX09XQ",
+            "category_id": 149,
+            "perex": "Dve slovensk\u00e9 rodiny opisuj\u00fa cestu vlakom do Chorv\u00e1tska, na ktor\u00fa tak dlho nezabudn\u00fa.",
+            "seo_description": "",
+            "project": "aktuality",
+            "publish_up": 1626695760,
+            "modified": 1626710621,
+            "alias": "vlak-do-chorvatska-meska-uz-11-hodin-dovolenkarom-vratia-polovicu-nakladov",
+            "state": 2,
+            "flags": [
+                "5",
+                "8",
+                "1003"
+            ],
+            "related": [],
+            "url": "https:\/\/www.aktuality.sk\/clanok\/908778\/vlak-do-chorvatska-meska-uz-11-hodin-dovolenkarom-vratia-polovicu-nakladov\/",
+            "image": {
+                "id": "W2WM2_otTiP2lbT-eX09XQ",
+                "title": "Nede\u013en\u00fd vlakov\u00fd spoj do Chorv\u00e1tska me\u0161k\u00e1 11 hod\u00edn",
+                "elastic_source": {
+                    "extension": "jpg",
+                    "project": "aktuality",
+                    "deleted": false,
+                    "description": "",
+                    "filename": "cesta vlakom do chorvatska.jpg",
+                    "keywords": [
+                        "regiojet"
+                    ],
+                    "source": "Arch\u00edv AH",
+                    "title": "Nede\u013en\u00fd vlakov\u00fd spoj do Chorv\u00e1tska me\u0161k\u00e1 11 hod\u00edn",
+                    "user": "impo",
+                    "create_time": 1626693069,
+                    "update_time": 1626693112,
+                    "config": "{\"iw\":1920,\"ih\":1080,\"if\":[\"1280\",\"640\",\"320\"],\"iwm\":0}",
+                    "ratio": 1.7777777777777777,
+                    "resolution": 2073600,
+                    "created_at": "2021-07-19T13:11:09+02:00",
+                    "updated_at": "2021-07-28T09:47:13+02:00"
+                },
+                "source": "Arch\u00edv AH",
+                "version": 2,
+                "content": "",
+                "imageUrls": {
+                    "original": "https:\/\/t.aimg.sk\/magaziny\/W2WM2_otTiP2lbT-eX09XQ.jpg?t=&h=4LKy4klvA1RX0azR4XsnqQ&e=2145916800&v=2"
+                }
+            },
+            "category": {
+                "id": 149,
+                "alias": "cestovanie",
+                "description": "Tipy na v\u00fdlety, cestovate\u013esk\u00e9 rady a nev\u0161edn\u00e9 dovolenky.",
+                "flags": [],
+                "children_ids": [
+                    150,
+                    160,
+                    161
+                ],
+                "keywords": [],
+                "name": "Cestovanie",
+                "parent_id": 0,
+                "seo_description": "Online magaz\u00edn pre slovensk\u00fdch cestovate\u013eov, dovolenk\u00e1rov a turistov. Pozrite si, kam na dovolenku \u010di pred\u013a\u017een\u00fd v\u00edkend. Cestovate\u013esk\u00e9 z\u00e1pisky nie len zo Slovenska.",
+                "seo_title": "Cestovanie a dovolenky na Slovensku aj vo svete",
+                "state": 2,
+                "exists": true,
+                "url": "\/cestovanie\/",
+                "children": []
+            },
+            "project_instance": {
+                "name": "Aktuality",
+                "alias": "aktuality",
+                "id": 2,
+                "url": "https:\/\/www.aktuality.sk"
+            },
+            "comment_count": 6,
+            "share_count": 1404,
+            "format": 1,
+            "views": 101622,
+            "keywords": [],
+            "authors_ids": [
+                "53"
+            ],
+            "rating": {
+                "avg": 0,
+                "count": 0,
+                "like": 0
+            },
+            "related_topics": []
+        },
+        {
+            "extra_data": {
+                "abtest": {
+                    "enabled": false,
+                    "data": {
+                        "image": "",
+                        "title": "",
+                        "title-short": ""
+                    },
+                    "updated": {
+                        "title": "2021-07-15 21:25:12",
+                        "image": "2021-07-15 21:47:20",
+                        "title-short": "2021-07-15 21:47:20"
+                    },
+                    "result": {
+                        "title": "",
+                        "image": "",
+                        "title-short": ""
+                    }
+                },
+                "titles": {
+                    "short": "Zomrel b\u00fdval\u00fd politik Jaroslav Pa\u0161ka",
+                    "lower": "",
+                    "upper": "",
+                    "cas": ""
+                },
+                "external_url": "",
+                "place": "Bratislava",
+                "sponsored_by": "",
+                "facebook_image": "_zKhaXSxR72NrXmuj_d2lw",
+                "video_autoplay": false,
+                "video_autoplay_sound": false,
+                "video_article_embed_url": "",
+                "generated_keywords": [],
+                "age_pemission": 0,
+                "content_type": "4",
+                "video_logo": "",
+                "gemius": {
+                    "category": 0
+                },
+                "category_url": "https:\/\/www.aktuality.sk\/spravy\/slovensko\/"
+            },
+            "id": 908040,
+            "title": "Zomrel b\u00fdval\u00fd politik Jaroslav Pa\u0161ka",
+            "seo_title": "",
+            "image_id": "_zKhaXSxR72NrXmuj_d2lw",
+            "category_id": 24,
+            "perex": "Vo veku 67 rokov zomrel b\u00fdval\u00fd politik Slovenskej n\u00e1rodnej strany Jaroslav Pa\u0161ka.",
+            "seo_description": "",
+            "project": "aktuality",
+            "publish_up": 1626377460,
+            "modified": 1626378665,
+            "alias": "zomrel-byvaly-politik-jaroslav-paska",
+            "state": 2,
+            "flags": [
+                "5",
+                "8",
+                "29"
+            ],
+            "related": [],
+            "url": "https:\/\/www.aktuality.sk\/clanok\/908040\/zomrel-byvaly-politik-jaroslav-paska\/",
+            "image": {
+                "id": "_zKhaXSxR72NrXmuj_d2lw",
+                "title": "Jaroslav Pa\u0161ka",
+                "elastic_source": {
+                    "extension": "jpg",
+                    "project": "aktuality",
+                    "deleted": false,
+                    "description": "",
+                    "filename": "14september2017_NRSR_2459081 (1).jpg",
+                    "keywords": [
+                        "jaroslav paska",
+                        "paska"
+                    ],
+                    "source": "TASR",
+                    "title": "Jaroslav Pa\u0161ka",
+                    "user": "impo",
+                    "create_time": 1626378411,
+                    "update_time": 1626378436,
+                    "config": "{\"iw\":1200,\"ih\":873,\"if\":[\"640\",\"320\"],\"iwm\":0,\"ic\":{\"x\":0,\"y\":51,\"w\":1200,\"h\":674}}",
+                    "ratio": 1.3745704467353952,
+                    "resolution": 1047600,
+                    "created_at": "2021-07-15T21:46:51+02:00",
+                    "updated_at": "2021-07-28T09:47:13+02:00"
+                },
+                "source": "TASR",
+                "version": 3,
+                "content": "",
+                "imageUrls": {
+                    "original": "https:\/\/t.aimg.sk\/magaziny\/_zKhaXSxR72NrXmuj_d2lw.jpg?t=&h=JokVOI2480J7yilX9sz-lw&e=2145916800&v=3"
+                }
+            },
+            "category": {
+                "id": 24,
+                "alias": "slovensko",
+                "description": "",
+                "flags": [
+                    1
+                ],
+                "children_ids": [],
+                "keywords": [],
+                "name": "Slovensko",
+                "parent_id": 2,
+                "seo_description": "Pre\u010d\u00edtajte si spravodajstvo z domova. Aktu\u00e1lne inform\u00e1cie k udalostiam, ktor\u00e9 sa stali na Slovensku. Dom\u00e1ce spr\u00e1vy na spravodajskom port\u00e1li Aktuality.sk",
+                "seo_title": "Dom\u00e1ce spr\u00e1vy zo Slovenska, koment\u00e1re",
+                "state": 2,
+                "exists": true,
+                "url": "https:\/\/www.aktuality.sk\/spravy\/slovensko\/",
+                "parent_category": {
+                    "id": 2,
+                    "alias": "spravy",
+                    "description": "",
+                    "flags": [],
+                    "children_ids": [
+                        208,
+                        207,
+                        177,
+                        176,
+                        169,
+                        12,
+                        205,
+                        71,
+                        24,
+                        25,
+                        101,
+                        103,
+                        213,
+                        306,
+                        42,
+                        209,
+                        172
+                    ],
+                    "keywords": [],
+                    "name": "Spr\u00e1vy",
+                    "parent_id": 0,
+                    "seo_description": "Aktu\u00e1lne spravodajstvo z domova a zo sveta. Koment\u00e1re k udalostiam, spr\u00e1vy z va\u0161ich regi\u00f3nov, ekonomick\u00e9 spravodajstvo, krimi spr\u00e1vy ..",
+                    "seo_title": "Najnov\u0161ie spr\u00e1vy a koment\u00e1re z domova \u010di zahrani\u010dia",
+                    "state": 2,
+                    "exists": true,
+                    "url": "",
+                    "children": []
+                },
+                "children": []
+            },
+            "project_instance": {
+                "name": "Aktuality",
+                "alias": "aktuality",
+                "id": 2,
+                "url": "https:\/\/www.aktuality.sk"
+            },
+            "comment_count": 8,
+            "share_count": 989,
+            "format": 1,
+            "views": 95701,
+            "keywords": [],
+            "authors_ids": [
+                "5472"
+            ],
+            "rating": {
+                "avg": 0,
+                "count": 0,
+                "like": 0
+            },
+            "related_topics": []
+        },
+        {
+            "extra_data": {
+                "abtest": {
+                    "enabled": false,
+                    "data": {
+                        "image": "",
+                        "title": "",
+                        "title-short": ""
+                    },
+                    "updated": {
+                        "title": "2021-07-16 11:26:42",
+                        "image": "2021-07-16 11:26:42",
+                        "title-short": "2021-07-16 11:26:42"
+                    },
+                    "result": {
+                        "title": "",
+                        "image": "",
+                        "title-short": ""
+                    }
+                },
+                "titles": {
+                    "short": "Chorv\u00e1tske pobre\u017eie u\u017e nie je zelen\u00e9",
+                    "lower": "",
+                    "upper": "",
+                    "cas": ""
+                },
+                "external_url": "",
+                "place": "",
+                "sponsored_by": "",
+                "facebook_image": "qRUNTEKIS-3EtviQZp0nTA",
+                "video_autoplay": false,
+                "video_autoplay_sound": false,
+                "video_article_embed_url": "",
+                "generated_keywords": [],
+                "age_pemission": 0,
+                "content_type": "5",
+                "video_logo": "",
+                "gemius": {
+                    "category": 0
+                },
+                "category_url": "\/cestovanie\/"
+            },
+            "id": 908155,
+            "title": "Chorv\u00e1tske pobre\u017eie u\u017e nie je zelen\u00e9, po\u010dty pr\u00edpadov rast\u00fa aj na Cypre a v Gr\u00e9cku",
+            "seo_title": "",
+            "image_id": "qRUNTEKIS-3EtviQZp0nTA",
+            "category_id": 149,
+            "perex": "Pre rast\u00face po\u010dty pr\u00edpadov zobrazuje nov\u00e1 mapa Eur\u00f3pskeho centra pre prevenciu a kontrolu chor\u00f4b ob\u013e\u00faben\u00e9 destin\u00e1cie Slov\u00e1kov ako oran\u017eov\u00e9 alebo \u010derven\u00e9. ",
+            "seo_description": "",
+            "project": "aktuality",
+            "publish_up": 1626428640,
+            "modified": 1626429754,
+            "alias": "chorvatske-pobrezie-uz-nie-je-zelene-pocty-pripadov-rastu-aj-na-cypre-a-v-grecku",
+            "state": 2,
+            "flags": [
+                "5",
+                "8",
+                "1003"
+            ],
+            "related": [],
+            "url": "https:\/\/www.aktuality.sk\/clanok\/908155\/chorvatske-pobrezie-uz-nie-je-zelene-pocty-pripadov-rastu-aj-na-cypre-a-v-grecku\/",
+            "image": {
+                "id": "qRUNTEKIS-3EtviQZp0nTA",
+                "title": "Najnov\u0161ia mapa Eur\u00f3pskeho centra pre prevenciu a kontrolu chor\u00f4b zobrazuj\u00faca po\u010dty nov\u00fdch pr\u00edpadov za 2\u017e. a 27. t\u00fd\u017ede\u0148 2021",
+                "elastic_source": {
+                    "extension": "jpg",
+                    "project": "aktuality",
+                    "deleted": false,
+                    "description": "",
+                    "filename": "ecdc 26w - 27w 2021 mapa.jpg",
+                    "keywords": [
+                        "ecdc mapa"
+                    ],
+                    "source": "ECDC",
+                    "title": "Najnov\u0161ia mapa Eur\u00f3pskeho centra pre prevenciu a kontrolu chor\u00f4b zobrazuj\u00faca po\u010dty nov\u00fdch pr\u00edpadov za 2\u017e. a 27. t\u00fd\u017ede\u0148 2021",
+                    "user": "impo",
+                    "create_time": 1626424972,
+                    "update_time": 1626425058,
+                    "config": "{\"iw\":2000,\"ih\":1412,\"if\":[\"1280\",\"640\",\"320\"],\"iwm\":0}",
+                    "ratio": 1.4164305949008498,
+                    "resolution": 2824000,
+                    "created_at": "2021-07-16T10:42:52+02:00",
+                    "updated_at": "2021-07-28T09:47:13+02:00"
+                },
+                "source": "ECDC",
+                "version": 2,
+                "content": "",
+                "imageUrls": {
+                    "original": "https:\/\/t.aimg.sk\/magaziny\/qRUNTEKIS-3EtviQZp0nTA.jpg?t=&h=yD0y6TYdVLp1bKjhaknwKg&e=2145916800&v=2"
+                }
+            },
+            "category": {
+                "id": 149,
+                "alias": "cestovanie",
+                "description": "Tipy na v\u00fdlety, cestovate\u013esk\u00e9 rady a nev\u0161edn\u00e9 dovolenky.",
+                "flags": [],
+                "children_ids": [
+                    150,
+                    160,
+                    161
+                ],
+                "keywords": [],
+                "name": "Cestovanie",
+                "parent_id": 0,
+                "seo_description": "Online magaz\u00edn pre slovensk\u00fdch cestovate\u013eov, dovolenk\u00e1rov a turistov. Pozrite si, kam na dovolenku \u010di pred\u013a\u017een\u00fd v\u00edkend. Cestovate\u013esk\u00e9 z\u00e1pisky nie len zo Slovenska.",
+                "seo_title": "Cestovanie a dovolenky na Slovensku aj vo svete",
+                "state": 2,
+                "exists": true,
+                "url": "\/cestovanie\/",
+                "children": []
+            },
+            "project_instance": {
+                "name": "Aktuality",
+                "alias": "aktuality",
+                "id": 2,
+                "url": "https:\/\/www.aktuality.sk"
+            },
+            "comment_count": 9,
+            "share_count": 1511,
+            "format": 1,
+            "views": 95181,
+            "keywords": [
+                "koronavirus slovensko",
+                "koronavirus na slovensku",
+                "koronavirus",
+                "covid 19",
+                "covid-19",
+                "vakcina proti koronavirusu",
+                "vakcina covid 19",
+                "vakcina korona",
+                "vakcina koronavirus",
+                "dovolenka v chorvatsku",
+                "letna dovolenka"
+            ],
+            "authors_ids": [
+                "53"
+            ],
+            "rating": {
+                "avg": 0,
+                "count": 0,
+                "like": 0
+            },
+            "related_topics": []
+        },
+        {
+            "extra_data": {
+                "abtest": {
+                    "enabled": true,
+                    "data": {
+                        "image": "",
+                        "title": "",
+                        "title-short": "Kotleba sa fotil s R\u00f3mami"
+                    },
+                    "updated": {
+                        "title": "2021-07-18 09:43:58",
+                        "image": "2021-07-18 09:41:36",
+                        "title-short": "2021-07-18 09:41:36"
+                    },
+                    "result": {
+                        "title": "",
+                        "image": "",
+                        "title-short": ""
+                    }
+                },
+                "titles": {
+                    "short": "Hur\u00e1, na chudobu",
+                    "lower": "",
+                    "upper": "",
+                    "cas": ""
+                },
+                "external_url": "",
+                "place": "",
+                "sponsored_by": "",
+                "facebook_image": "i5QHqmvkSc-vSytKRsMJjA",
+                "video_autoplay": false,
+                "video_autoplay_sound": false,
+                "video_article_embed_url": "",
+                "generated_keywords": [],
+                "age_pemission": 0,
+                "content_type": "5",
+                "video_logo": "",
+                "gemius": {
+                    "category": 0
+                },
+                "category_url": "https:\/\/www.aktuality.sk\/spravy\/komentare\/"
+            },
+            "id": 908522,
+            "title": "Koment\u00e1r Petra B\u00e1rdyho: Vysmiaty Kotleba medzi R\u00f3mami nie je na smiech",
+            "seo_title": "",
+            "image_id": "i5QHqmvkSc-vSytKRsMJjA",
+            "category_id": 42,
+            "perex": "Vidie\u0165, ako sa Kotleba fot\u00ed s mlad\u00fdmi R\u00f3mami, m\u00f4\u017ee by\u0165 vtipn\u00e9, ale aj odporn\u00e9.",
+            "seo_description": "",
+            "project": "aktuality",
+            "publish_up": 1626594900,
+            "modified": 1626595145,
+            "alias": "komentar-petra-bardyho-vysmiaty-kotleba-medzi-romami-nie-je-na-smiech",
+            "state": 2,
+            "flags": [
+                "5",
+                "8",
+                "16",
+                "1120"
+            ],
+            "related": [],
+            "url": "https:\/\/www.aktuality.sk\/clanok\/908522\/komentar-petra-bardyho-vysmiaty-kotleba-medzi-romami-nie-je-na-smiech\/",
+            "image": {
+                "id": "i5QHqmvkSc-vSytKRsMJjA",
+                "title": "Marian Kotleba sa v Sa\u010durove fotil s mlad\u00fdmi R\u00f3mami",
+                "elastic_source": {
+                    "extension": "jpg",
+                    "project": "aktuality",
+                    "deleted": false,
+                    "description": "",
+                    "filename": "kotleba sacurovce romovia 2021.jpeg",
+                    "keywords": [
+                        "kotleba",
+                        "marian kotleba"
+                    ],
+                    "source": "Instagram",
+                    "title": "Marian Kotleba sa v Sa\u010durove fotil s mlad\u00fdmi R\u00f3mami",
+                    "user": "impo",
+                    "create_time": 1626593408,
+                    "update_time": 1626595128,
+                    "config": "{\"iw\":1169,\"ih\":1169,\"if\":[\"640\",\"320\"],\"iwm\":0,\"ic\":{\"x\":0,\"y\":99,\"w\":1101,\"h\":619}}",
+                    "ratio": 1,
+                    "resolution": 1366561,
+                    "created_at": "2021-07-18T09:30:08+02:00",
+                    "updated_at": "2021-07-28T09:47:13+02:00"
+                },
+                "source": "Instagram",
+                "version": 3,
+                "content": "",
+                "imageUrls": {
+                    "original": "https:\/\/t.aimg.sk\/magaziny\/i5QHqmvkSc-vSytKRsMJjA.jpg?t=&h=iejQizTNJCDScj3lbdZQ1g&e=2145916800&v=3"
+                }
+            },
+            "category": {
+                "id": 42,
+                "alias": "komentare",
+                "description": "",
+                "flags": [
+                    1
+                ],
+                "children_ids": [],
+                "keywords": [],
+                "name": "Koment\u00e1re",
+                "parent_id": 2,
+                "seo_description": "Tie najd\u00f4le\u017eitej\u0161ie koment\u00e1re k aktu\u00e1lnym probl\u00e9mom na Slovensku i vo svete. Pre\u010d\u00edtajte si n\u00e1zory najzn\u00e1mej\u0161\u00edch koment\u00e1rov na aktu\u00e1lne dianie. Aktuality.sk",
+                "seo_title": "Koment\u00e1re k aktu\u00e1lnym udalostiam",
+                "state": 2,
+                "exists": true,
+                "url": "https:\/\/www.aktuality.sk\/spravy\/komentare\/",
+                "children": []
+            },
+            "project_instance": {
+                "name": "Aktuality",
+                "alias": "aktuality",
+                "id": 2,
+                "url": "https:\/\/www.aktuality.sk"
+            },
+            "comment_count": 26,
+            "share_count": 2415,
+            "format": 1,
+            "views": 93219,
+            "keywords": [
+                "marian kotleba",
+                "lsns",
+                "kotleba",
+                "peter pellegrini",
+                "pellegrini",
+                "smer"
+            ],
+            "authors_ids": [
+                "2"
+            ],
+            "rating": {
+                "avg": 0,
+                "count": 0,
+                "like": 0
+            },
+            "related_topics": []
+        },
+        {
+            "extra_data": {
+                "abtest": {
+                    "enabled": false,
+                    "data": {
+                        "image": "",
+                        "title": "",
+                        "title-short": ""
+                    },
+                    "updated": {
+                        "title": "2021-07-17 18:28:31",
+                        "image": "2021-07-17 18:28:31",
+                        "title-short": "2021-07-17 18:28:31"
+                    },
+                    "result": {
+                        "title": "",
+                        "image": "",
+                        "title-short": ""
+                    }
+                },
+                "titles": {
+                    "short": "Elitn\u00fd policajt nahr\u00e1val ako Matovi\u010d",
+                    "lower": "",
+                    "upper": "",
+                    "cas": ""
+                },
+                "external_url": "",
+                "place": "Bratislava",
+                "sponsored_by": "",
+                "facebook_image": "XjWvykHOR2CbwpskYIBLMw",
+                "video_autoplay": false,
+                "video_autoplay_sound": false,
+                "video_article_embed_url": "",
+                "generated_keywords": [],
+                "age_pemission": 0,
+                "content_type": "4",
+                "video_logo": "",
+                "gemius": {
+                    "category": 0
+                },
+                "category_url": "https:\/\/www.aktuality.sk\/spravy\/komentare\/"
+            },
+            "id": 908471,
+            "title": "Udalos\u0165 t\u00fd\u017ed\u0148a Mareka Vagovi\u010da: B\u00fdval\u00fd \u0161\u00e9f NAKA sa zahral na Matovi\u010da",
+            "seo_title": "",
+            "image_id": "XjWvykHOR2CbwpskYIBLMw",
+            "category_id": 42,
+            "perex": "Branislav Zurian sa v hneve nespr\u00e1val ako zodpovedn\u00fd policajt, ale ako pok\u00fatny obchodn\u00edk s neoveren\u00fdmi inform\u00e1ciami. Cie\u013eom bola zrejme snaha o kompromit\u00e1ciu ministra vn\u00fatra Romana Mikulca. ",
+            "seo_description": "",
+            "project": "aktuality",
+            "publish_up": 1626645600,
+            "modified": 1626785039,
+            "alias": "udalost-tyzdna-mareka-vagovica-byvaly-sef-naka-sa-zahral-na-matovica",
+            "state": 2,
+            "flags": [
+                "5",
+                "8",
+                "1006",
+                "1120"
+            ],
+            "related": [],
+            "url": "https:\/\/www.aktuality.sk\/clanok\/908471\/udalost-tyzdna-mareka-vagovica-byvaly-sef-naka-sa-zahral-na-matovica\/",
+            "image": {
+                "id": "XjWvykHOR2CbwpskYIBLMw",
+                "title": "Branislav Zurian",
+                "elastic_source": {
+                    "extension": "jpg",
+                    "project": "aktuality",
+                    "deleted": false,
+                    "description": "",
+                    "filename": "2__21082018_tk_prezidium_pz_vrazda_valko548680.jpg",
+                    "keywords": [
+                        "Branislav Zurian"
+                    ],
+                    "source": "TASR\/Pavol Zachar",
+                    "title": "Branislav Zurian",
+                    "user": "impo",
+                    "create_time": 1534848094,
+                    "update_time": 1534848161,
+                    "config": "{\"iw\":7360,\"ih\":4912,\"if\":[\"2560\",\"1280\",\"640\",\"320\"],\"iwm\":0,\"ic\":{\"x\":1259,\"y\":1303,\"w\":4504,\"h\":2543}}",
+                    "ratio": 1.498371335504886,
+                    "resolution": 36152320,
+                    "created_at": "2018-08-21T12:41:34+02:00",
+                    "updated_at": "2021-07-28T09:47:13+02:00"
+                },
+                "source": "TASR\/Pavol Zachar",
+                "version": 1,
+                "content": "",
+                "imageUrls": {
+                    "original": "https:\/\/t.aimg.sk\/magaziny\/XjWvykHOR2CbwpskYIBLMw.jpg?t=&h=Y00MqElBIgaCNGJB8spt_g&e=2145916800&v=1"
+                }
+            },
+            "category": {
+                "id": 42,
+                "alias": "komentare",
+                "description": "",
+                "flags": [
+                    1
+                ],
+                "children_ids": [],
+                "keywords": [],
+                "name": "Koment\u00e1re",
+                "parent_id": 2,
+                "seo_description": "Tie najd\u00f4le\u017eitej\u0161ie koment\u00e1re k aktu\u00e1lnym probl\u00e9mom na Slovensku i vo svete. Pre\u010d\u00edtajte si n\u00e1zory najzn\u00e1mej\u0161\u00edch koment\u00e1rov na aktu\u00e1lne dianie. Aktuality.sk",
+                "seo_title": "Koment\u00e1re k aktu\u00e1lnym udalostiam",
+                "state": 2,
+                "exists": true,
+                "url": "https:\/\/www.aktuality.sk\/spravy\/komentare\/",
+                "parent_category": {
+                    "id": 2,
+                    "alias": "spravy",
+                    "description": "",
+                    "flags": [],
+                    "children_ids": [
+                        208,
+                        207,
+                        177,
+                        176,
+                        169,
+                        12,
+                        205,
+                        71,
+                        24,
+                        25,
+                        101,
+                        103,
+                        213,
+                        306,
+                        42,
+                        209,
+                        172
+                    ],
+                    "keywords": [],
+                    "name": "Spr\u00e1vy",
+                    "parent_id": 0,
+                    "seo_description": "Aktu\u00e1lne spravodajstvo z domova a zo sveta. Koment\u00e1re k udalostiam, spr\u00e1vy z va\u0161ich regi\u00f3nov, ekonomick\u00e9 spravodajstvo, krimi spr\u00e1vy ..",
+                    "seo_title": "Najnov\u0161ie spr\u00e1vy a koment\u00e1re z domova \u010di zahrani\u010dia",
+                    "state": 2,
+                    "exists": true,
+                    "url": "",
+                    "children": []
+                },
+                "children": []
+            },
+            "project_instance": {
+                "name": "Aktuality",
+                "alias": "aktuality",
+                "id": 2,
+                "url": "https:\/\/www.aktuality.sk"
+            },
+            "comment_count": 16,
+            "share_count": 1788,
+            "format": 1,
+            "views": 75139,
+            "keywords": [
+                "zurian",
+                "naka",
+                "mikulec",
+                "imrecze",
+                "fico",
+                "pellegrini",
+                "kollar",
+                "lucansky",
+                "matovic",
+                "prochazka"
+            ],
+            "authors_ids": [
+                "1536"
+            ],
+            "rating": {
+                "avg": 0,
+                "count": 0,
+                "like": 0
+            },
+            "related_topics": []
+        }
+    ],
+    "total_count": 371
+}

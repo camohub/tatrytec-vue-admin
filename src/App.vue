@@ -20,6 +20,7 @@ export default {
 
 
 <style lang="scss">
+
 html, body {
     margin: 0;
     padding: 0;
@@ -45,4 +46,18 @@ html, body {
     }
   }
 }
+
+div.table-responsive {
+    padding-top: 4px;
+    margin-bottom: 50px;
+}
+
+#articlesDataTable_length {
+    select {
+        margin-left: 7px;
+        margin-right: 7px;
+    }
+}
+
+
 </style>
