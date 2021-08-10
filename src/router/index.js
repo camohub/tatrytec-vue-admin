@@ -23,17 +23,17 @@ const routes = [
   {
     path: '/articles',
     name: 'Articles',
-    component: () => import(/* webpackChunkName: "articles" */ '../views/Articles.vue')
+    component: () => import(/* webpackChunkName: "articles" */ '../views/articles/Articles.vue')
   },
   {
     path: '/article/create',
     name: 'Article create',
-    component: () => import(/* webpackChunkName: "article create" */ '../views/ArticleCreate.vue')
+    component: () => import(/* webpackChunkName: "article create" */ '../views/articles/ArticleCreate.vue')
   },
   {
-    path: '/article/edit',
+    path: '/article/edit/:id',
     name: 'Article edit',
-    component: () => import(/* webpackChunkName: "article edit" */ '../views/ArticleEdit.vue')
+    component: () => import(/* webpackChunkName: "article edit" */ '../views/articles/ArticleEdit.vue')
   },
   {
     path: '/category/create',

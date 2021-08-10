@@ -32,10 +32,13 @@ html, body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
+
+    h2 {
+        margin-bottom: 20px;
+    }
 }
 
 #nav {
-
 
   a {
     font-weight: bold;
@@ -59,5 +62,8 @@ div.table-responsive {
     }
 }
 
+label {
+    font-weight: bold;
+}
 
 </style>
