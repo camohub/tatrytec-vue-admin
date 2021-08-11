@@ -2,7 +2,6 @@
     <div class="container-fluid" id="header">
         <div class="row">
             <h1 class="col-12 col-sm-9">
-
                 <img src="../assets/logo.png" alt="" class="img-responsive" />
                 tatrytec.eu vue admin
             </h1>

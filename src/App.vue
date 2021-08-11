@@ -66,4 +66,10 @@ label {
     font-weight: bold;
 }
 
+.form-group .text-danger {
+    display: inline-block;
+    margin-top: 7px;
+    font-weight: bold;
+}
+
 </style>

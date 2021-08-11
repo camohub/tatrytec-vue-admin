@@ -18,11 +18,9 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 import axios from "axios"
 window.axios = axios;
 axios.defaults.withCredentials = true;
-
-let authToken = localStorage.getItem('authToken');        
-axios.defaults.headers.common = {
-    'Authorization': 'Bearer ' + authToken
-};
+axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+let authToken = localStorage.getItem('authToken');  
+axios.defaults.headers.common['Authorization'] = 'Bearer ' + authToken;  
 
 
 /**
@@ -53,7 +51,7 @@ axios.get( apiRoutes.AUTH_CHECK_URL )
     .then(response => {
         //console.log(response);
 
-        // Has to be here otherwise it redirests to login 
+        // Has to be here otherwise it redirects to login 
         // before auth check is done.
         router.beforeEach((to, from, next) => {
 

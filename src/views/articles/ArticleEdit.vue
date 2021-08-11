@@ -8,32 +8,50 @@
                 <div class="col-9 col-xl-7">
                     <h2>Article edit <span v-if="this.article"> - {{this.article.title}}</span></h2>
 
-                    <form v-if="this.article">
+                    <form v-if="this.article" @submit.prevent="saveArticle($event)">
 
                         <div class="form-group">
                             <label for="meta_desc">Meta desc</label>
                             <input name="meta_desc" v-model="this.article.meta_desc" type="text" class="form-control" id="meta_desc" aria-describedby="meta_desc">
+                            <small v-if="formErrors.meta_desc" class="text-danger">{{formErrors.meta_desc[0]}}</small>
                         </div>
 
                         <div class="form-group">
                             <label for="title">Title</label>
                             <input name="title" v-model="article.title" type="text" class="form-control" id="title" aria-describedby="title">
+                            <small v-if="formErrors.title" class="text-danger">{{formErrors.title[0]}}</small>
                         </div>                        
 
                         <div class="form-group">
                             <label for="perex">Perex</label>
-                            <textarea name="perex" v-model="this.article.perex" type="text" class="form-control" id="perex" aria-describedby="perex" rows="5"></textarea>
+                            <Editor name="perex" 
+                                v-model="this.article.perex" 
+                                :init="this.tinyInit" 
+                                api-key="4hwg3k2s1gzjocmcfx4b8h0xncj2s0af92t6i1czkxed8uvz"
+                                class="form-control tinymce" 
+                                id="perex" 
+                                aria-describedby="perex" 
+                                rows="4"></Editor>
+                                <small v-if="formErrors.perex" class="text-danger">{{formErrors.perex[0]}}</small>
                         </div>
 
                         <div class="form-group">
                             <label for="content">Text</label>
-                            <textarea name="content" v-model="this.article.content" type="text" class="form-control" id="content" aria-describedby="content" rows="25"></textarea>
+                            <Editor name="content" 
+                                v-model="this.article.content" 
+                                :init="this.tinyInit" 
+                                api-key="4hwg3k2s1gzjocmcfx4b8h0xncj2s0af92t6i1czkxed8uvz"
+                                class="form-control" 
+                                id="content" 
+                                aria-describedby="content" 
+                                rows="25"></Editor>
+                                <small v-if="formErrors.content" class="text-danger">{{formErrors.content[0]}}</small>
                         </div>
 
                         <div class="form-group">
                             <label for="content">Kategórie</label>
                             <select name="categories" 
-                                v-model="article.categoriesIds" 
+                                v-model="article.categories" 
                                 id="categories" 
                                 multiple 
                                 class="form-control col-md-5" 
@@ -42,12 +60,18 @@
                                     :key="key" 
                                     v-bind:value="key">{{category}}</option>
                             </select>
+                            <small v-if="formErrors.categories" class="text-danger">{{formErrors.categories[0]}}</small>
                         </div>
 
                         <div class="form-group">
                             <input type="submit" class="btn btn-md btn-primary" value="Uložiť článok">
                         </div>
                         
+                    </form>
+
+                    <form @submit.prevent="" id="tinymceImageForm" class="d-none">
+                        <input ref="image" @change="this.storeImage($event, this.filePickerCallback);" type="file" name="image" id="tinymceImage">
+                        <input type="submit" value="Uložiť">
                     </form>
                 </div>
             </div>
@@ -59,10 +83,12 @@
 <script>
 
 // @ is an alias to /src
+import { ref } from "vue"
 import Header from "@/components/Header.vue"
 import SideBar from "@/components/SideBar.vue"
-
 import apiRoutes from "@/router/apiRoutes"
+import Editor from '@tinymce/tinymce-vue'
+import css from '@/utils/tinymce-custom.js'
 
 export default {
 
@@ -71,8 +97,61 @@ export default {
     data() {
         return {
             article: null,
-            selectCategories: [1,2,3,4,5,6,7,8,9],
-            a: 'aaaaaa'
+            selectCategories: [],
+            formErrors: {},
+
+            tinyApiKey: '4hwg3k2s1gzjocmcfx4b8h0xncj2s0af92t6i1czkxed8uvz',
+            tinyInit: {
+                themes: "modern",
+                entity_encoding: "raw",
+                relative_urls: false,  // ie. if true file manager produce urls like ../../../../wrong.jpg
+                //content_css: "/assets/tinymce-custom.css",
+                content_style: css,
+                image_advtab: true,
+                image_class_list: [
+                    { title: 'None', value: '' },
+                    { title: 'Bootstrap fluid', value: 'img-fluid' },
+                    { title: 'Left', value: 'fL' },
+                    { title: 'Right', value: 'fR' },
+                    { title: 'Gallery', value: 'gallery' }
+                ],
+                plugins: [
+                    "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+                    "searchreplace wordcount visualblocks visualchars fullscreen insertdatetime media nonbreaking",
+                    "save table contextmenu directionality emoticons template paste textcolor"
+                ],
+                style_formats: [
+                    { title: "Headers", items: [
+                        { title: "Header 1", format: "h2"},
+                        { title: "Header 2", format: "h3"},
+                        { title: "Header 3", format: "h4"}
+                    ]},
+                    { title: "Inline", items: [
+                        { title: "Bold", icon: "bold", format: "bold"},
+                        { title: "Italic", icon: "italic", format: "italic"},
+                        { title: "Underline", icon: "underline", format: "underline"},
+                        { title: "Strikethrough", icon: "strikethrough", format: "strikethrough"},
+                        { title: "Superscript", icon: "superscript", format: "superscript"},
+                        { title: "Subscript", icon: "subscript", format: "subscript"},
+                        { title: "Code", icon: "code", format: "code"}
+                    ]},
+                    { title: "Blocks", items: [
+                        { title: "Paragraph", format: "p"},
+                        { title: "Blockquote", format: "blockquote"},
+                        { title: "Div", format: "div"},
+                        { title: "Pre", format: "pre"}
+                    ]}
+                ],
+
+                toolbar: "insertfile undo redo | styleselect | bold italic " +
+                    "| alignleft aligncenter alignright alignjustify " +
+                    "| bullist numlist | link image | media fullpage " +
+                    "| forecolor backcolor",
+
+                //file_browser_callback: function (field_name, url, type, win)  // version 4
+                file_picker_callback: this.fileHandler,
+
+            }
         }
     },
 
@@ -81,7 +160,6 @@ export default {
         getArticle() {
             axios.get( apiRoutes.ARTICLE_EDIT_URL + this.$route.params.id )
                 .then( response => {
-                    console.log(response);
                     this.article = response.data.article;
                     this.selectCategories = response.data.selectCategories;
                 })
@@ -89,6 +167,54 @@ export default {
                     this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa načítať článok.'});
                 });
         },
+
+        saveArticle(e) {
+            axios.post( apiRoutes.ARTICLE_STORE_URL + this.article.id, this.article )
+                .then( response => {
+                    if(response.data.error) this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': response.data.error});
+                    else this.$store.dispatch('alerts/setAlert', {'type': 'success', 'msg': 'Článok bol uložený.'});
+                })
+                .catch( error => {
+                    if ( error.response?.data?.errors ) {
+                        this.formErrors = error.response.data.errors;
+                    }
+
+                    this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Pri ukladaní došlo k chybe.'});
+                });
+        },
+
+        storeImage(e, filePickerCallback) {
+
+			let url = apiRoutes.ARTICLE_IMAGE_ADD_URL;
+			let headers = {'Content-Type': 'multipart/form-data'};
+			let formData = new FormData();
+			formData.append("image", this.$refs.image.files[0]);
+
+			axios.post(url, formData, headers)
+				.then( response => {
+					let data = response.data;
+					console.log(data);
+                    let webUrl = apiRoutes.API_URL_SHORT;
+					filePickerCallback(webUrl + data.filePath);
+				})
+				.catch( error => {
+					let data = error.response.data;
+					console.log(data);
+					let msg = 'Pri ukladaní obrázku došlo k chybe.';
+					if( data.errors.image ) msg += '<br>' + data.errors.image[0];
+					this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': msg});
+				});
+		},
+
+        fileHandler(callback, value, meta) {
+            if(meta.filetype == 'image')
+            {
+                this.filePickerCallback = callback;
+                this.$refs.image.click();
+            }
+        },
+
+		filePickerCallback: null,  // Filled by TinyMCE
     },
 
     computed: {
@@ -102,7 +228,7 @@ export default {
     },
 
     components: {
-        Header, SideBar,
+        Header, SideBar, Editor
     },
 };
 
