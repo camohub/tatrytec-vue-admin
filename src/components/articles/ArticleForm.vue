@@ -1,8 +1,5 @@
 <template>
-    <div class="col-9 col-xl-7">
-        <h2 v-if="!this.id">Article create</h2>
-        <h2 v-if="this.id && this.article">Article edit - {{this.article.title}}</h2>
-
+    <div>
         <form v-if="this.article" @submit.prevent="storeArticle($event)">
 
             <div class="form-group">
@@ -83,11 +80,12 @@ import router from '@/router'
 
 export default {
 
-    name: "Article edit",
+    name: "Article form",
+
+    props: ['id'],
 
     data() {
         return {
-            id: null,
             article: null,
             selectCategories: [],
             formErrors: {},
@@ -168,6 +166,16 @@ export default {
                     this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa načítať článok.'});
                 });
         },
+        
+        getSelectCategories() {
+            axios( apiRoutes.CATEGORIES_SELECT_URL )
+                .then( response => {
+                    this.selectCategories = response.data.selectCategories;
+                })
+                .catch( error => {
+                    this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa načítať kategórie.'});
+                });
+        },
 
         storeArticle(e) {
             let url = apiRoutes.ARTICLE_STORE_URL + (this.article.id ? this.article.id : '');
@@ -228,18 +236,10 @@ export default {
     },
 
     created () {
-        this.id = this.$route.params.id;
-
-        axios( apiRoutes.CATEGORIES_SELECT_URL )
-            .then( response => {
-                this.selectCategories = response.data.selectCategories;
-            })
-            .catch( error => {
-                this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa načítať kategórie.'});
-            });
-
-        if ( this.id ) this.getArticle();
+        if( this.id ) this.getArticle();
         else this.createArticle();
+
+        this.getSelectCategories();
     },
 
     components: {
