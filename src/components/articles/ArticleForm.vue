@@ -197,26 +197,26 @@ export default {
 
         storeImage(e, filePickerCallback) {
 
-			let url = apiRoutes.ARTICLE_IMAGE_ADD_URL;
-			let headers = {'Content-Type': 'multipart/form-data'};
-			let formData = new FormData();
-			formData.append("image", this.$refs.image.files[0]);
+            let url = apiRoutes.ARTICLE_IMAGE_ADD_URL;
+            let headers = {'Content-Type': 'multipart/form-data'};
+            let formData = new FormData();
+            formData.append("image", this.$refs.image.files[0]);
 
-			axios.post(url, formData, headers)
-				.then( response => {
-					let data = response.data;
-					console.log(data);
+            axios.post(url, formData, headers)
+                .then( response => {
+                    let data = response.data;
+                    console.log(data);
                     let webUrl = apiRoutes.API_URL_SHORT;
-					filePickerCallback(webUrl + data.filePath);
-				})
-				.catch( error => {
-					let data = error.response.data;
-					console.log(data);
-					let msg = 'Pri ukladaní obrázku došlo k chybe.';
-					if( data.errors.image ) msg += '<br>' + data.errors.image[0];
-					this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': msg});
-				});
-		},
+                    filePickerCallback(webUrl + data.filePath);
+                })
+                .catch( error => {
+                    let data = error.response.data;
+                    console.log(data);
+                    let msg = 'Pri ukladaní obrázku došlo k chybe.';
+                    if( data.errors.image ) msg += '<br>' + data.errors.image[0];
+                    this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': msg});
+                });
+        },
 
         fileHandler(callback, value, meta) {
             if(meta.filetype == 'image')
@@ -226,7 +226,7 @@ export default {
             }
         },
 
-		filePickerCallback: null,  // Filled by TinyMCE
+        filePickerCallback: null,  // Filled by TinyMCE
     },
 
     computed: {
