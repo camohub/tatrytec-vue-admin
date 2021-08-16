@@ -10,7 +10,6 @@
 <script>
 
 // @ is an alias to /src
-import apiRoutes from '@/router/apiRoutes'
 import ArticleForm from '@/components/articles/ArticleForm'
 
 export default {
@@ -20,11 +19,7 @@ export default {
     data() {
         return {
             id: null,
-            article: {},
         }
-    },
-
-    methods: {
     },
 
     created () {
@@ -34,7 +29,7 @@ export default {
     components: {
         ArticleForm
     },
-    
+
 };
 
 </script>

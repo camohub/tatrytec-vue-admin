@@ -10,9 +10,6 @@
 <script>
 
 // @ is an alias to /src
-import { ref } from "vue"
-import apiRoutes from "@/router/apiRoutes"
-import router from '@/router'
 import ArticleForm from '@/components/articles/ArticleForm'
 
 export default {
