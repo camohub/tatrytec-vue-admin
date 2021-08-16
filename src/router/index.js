@@ -28,12 +28,12 @@ const routes = [
   {
     path: '/article/create',
     name: 'Article create',
-    component: () => import(/* webpackChunkName: "article create" */ '../views/articles/ArticleCreate.vue')
+    component: () => import(/* webpackChunkName: "article create" */ '../views/articles/ArticleCreateEdit.vue')
   },
   {
     path: '/article/edit/:id',
     name: 'Article edit',
-    component: () => import(/* webpackChunkName: "article edit" */ '../views/articles/ArticleEdit.vue')
+    component: () => import(/* webpackChunkName: "article edit" */ '../views/articles/ArticleCreateEdit.vue')
   },
   {
     path: '/category/create',

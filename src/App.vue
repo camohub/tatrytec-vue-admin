@@ -1,6 +1,12 @@
 <template>
     <div>
-        <router-view></router-view>
+        <Header />
+        <div class="container-fluid">
+            <div class="row">
+                <SideBar />
+                <router-view></router-view>
+            </div>
+        </div>
         <Alerts />
     </div>
 </template>
@@ -8,12 +14,14 @@
 
 <script>
 
+import Header from "@/components/Header.vue";
+import SideBar from "@/components/SideBar.vue";
 import Alerts from "@/components/Alerts.vue";
 
 export default {
 
     components: {
-        Alerts,
+        Alerts, Header, SideBar
     }
 }
 </script>

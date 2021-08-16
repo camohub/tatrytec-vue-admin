@@ -6,7 +6,7 @@
 
         <h3>Articles</h3>
         <li><router-link to="/articles">Articles</router-link></li>
-        <li><router-link to="/create/article">Create article</router-link></li>
+        <li><router-link to="/article/create">Create article</router-link></li>
 
         <h3>Categories</h3>
         <li><router-link to="/categories">Categories</router-link></li>

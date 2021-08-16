@@ -1,15 +1,6 @@
 <template>
-    <div>
-        <Header />
-        <div class="container-fluid">
-            <div class="row">
-                <SideBar />
-
-                <div class="col-9">
-                    <h2>Article create</h2>
-                </div>
-            </div>
-        </div>
+    <div class="col-9">
+        <h2>Article create</h2>
     </div>
 </template>
 

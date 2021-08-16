@@ -1,81 +1,73 @@
 <template>
-    <div>
-        <Header />
-        <div class="container-fluid">
-            <div class="row">
-                <SideBar />
+    <div class="col-9 col-xl-7">
+        <h2 v-if="!this.id">Article create</h2>
+        <h2 v-if="this.id && this.article">Article edit - {{this.article.title}}</h2>
 
-                <div class="col-9 col-xl-7">
-                    <h2>Article edit <span v-if="this.article"> - {{this.article.title}}</span></h2>
+        <form v-if="this.article" @submit.prevent="storeArticle($event)">
 
-                    <form v-if="this.article" @submit.prevent="saveArticle($event)">
-
-                        <div class="form-group">
-                            <label for="meta_desc">Meta desc</label>
-                            <input name="meta_desc" v-model="this.article.meta_desc" type="text" class="form-control" id="meta_desc" aria-describedby="meta_desc">
-                            <small v-if="formErrors.meta_desc" class="text-danger">{{formErrors.meta_desc[0]}}</small>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="title">Title</label>
-                            <input name="title" v-model="article.title" type="text" class="form-control" id="title" aria-describedby="title">
-                            <small v-if="formErrors.title" class="text-danger">{{formErrors.title[0]}}</small>
-                        </div>                        
-
-                        <div class="form-group">
-                            <label for="perex">Perex</label>
-                            <Editor name="perex" 
-                                v-model="this.article.perex" 
-                                :init="this.tinyInit" 
-                                api-key="4hwg3k2s1gzjocmcfx4b8h0xncj2s0af92t6i1czkxed8uvz"
-                                class="form-control tinymce" 
-                                id="perex" 
-                                aria-describedby="perex" 
-                                rows="4"></Editor>
-                                <small v-if="formErrors.perex" class="text-danger">{{formErrors.perex[0]}}</small>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="content">Text</label>
-                            <Editor name="content" 
-                                v-model="this.article.content" 
-                                :init="this.tinyInit" 
-                                api-key="4hwg3k2s1gzjocmcfx4b8h0xncj2s0af92t6i1czkxed8uvz"
-                                class="form-control" 
-                                id="content" 
-                                aria-describedby="content" 
-                                rows="25"></Editor>
-                                <small v-if="formErrors.content" class="text-danger">{{formErrors.content[0]}}</small>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="content">Kategórie</label>
-                            <select name="categories" 
-                                v-model="article.categories" 
-                                id="categories" 
-                                multiple 
-                                class="form-control col-md-5" 
-                                v-bind:size="this.selectSize">
-                                <option v-for="(category, key) in selectCategories" 
-                                    :key="key" 
-                                    v-bind:value="key">{{category}}</option>
-                            </select>
-                            <small v-if="formErrors.categories" class="text-danger">{{formErrors.categories[0]}}</small>
-                        </div>
-
-                        <div class="form-group">
-                            <input type="submit" class="btn btn-md btn-primary" value="Uložiť článok">
-                        </div>
-                        
-                    </form>
-
-                    <form @submit.prevent="" id="tinymceImageForm" class="d-none">
-                        <input ref="image" @change="this.storeImage($event, this.filePickerCallback);" type="file" name="image" id="tinymceImage">
-                        <input type="submit" value="Uložiť">
-                    </form>
-                </div>
+            <div class="form-group">
+                <label for="meta_desc">Meta desc</label>
+                <input name="meta_desc" v-model="this.article.meta_desc" type="text" class="form-control" id="meta_desc" aria-describedby="meta_desc">
+                <small v-if="formErrors.meta_desc" class="text-danger">{{formErrors.meta_desc[0]}}</small>
             </div>
-        </div>
+
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input name="title" v-model="article.title" type="text" class="form-control" id="title" aria-describedby="title">
+                <small v-if="formErrors.title" class="text-danger">{{formErrors.title[0]}}</small>
+            </div>                        
+
+            <div class="form-group">
+                <label for="perex">Perex</label>
+                <Editor name="perex" 
+                    v-model="this.article.perex" 
+                    :init="this.tinyInit" 
+                    api-key="4hwg3k2s1gzjocmcfx4b8h0xncj2s0af92t6i1czkxed8uvz"
+                    class="form-control tinymce" 
+                    id="perex" 
+                    aria-describedby="perex" 
+                    rows="4"></Editor>
+                    <small v-if="formErrors.perex" class="text-danger">{{formErrors.perex[0]}}</small>
+            </div>
+
+            <div class="form-group">
+                <label for="content">Text</label>
+                <Editor name="content" 
+                    v-model="this.article.content" 
+                    :init="this.tinyInit" 
+                    api-key="4hwg3k2s1gzjocmcfx4b8h0xncj2s0af92t6i1czkxed8uvz"
+                    class="form-control" 
+                    id="content" 
+                    aria-describedby="content" 
+                    rows="25"></Editor>
+                    <small v-if="formErrors.content" class="text-danger">{{formErrors.content[0]}}</small>
+            </div>
+
+            <div class="form-group">
+                <label for="content">Kategórie</label>
+                <select name="categories" 
+                    v-model="article.categories" 
+                    id="categories" 
+                    multiple 
+                    class="form-control col-md-5" 
+                    v-bind:size="this.selectSize">
+                    <option v-for="(category, key) in selectCategories" 
+                        :key="key" 
+                        v-bind:value="key">{{category}}</option>
+                </select>
+                <small v-if="formErrors.categories" class="text-danger">{{formErrors.categories[0]}}</small>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" class="btn btn-md btn-primary" value="Uložiť článok">
+            </div>
+            
+        </form>
+
+        <form @submit.prevent="" id="tinymceImageForm" class="d-none">
+            <input ref="image" @change="this.storeImage($event, this.filePickerCallback);" type="file" name="image" id="tinymceImage">
+            <input type="submit" value="Uložiť">
+        </form>
     </div>
 </template>
 
@@ -84,11 +76,10 @@
 
 // @ is an alias to /src
 import { ref } from "vue"
-import Header from "@/components/Header.vue"
-import SideBar from "@/components/SideBar.vue"
 import apiRoutes from "@/router/apiRoutes"
 import Editor from '@tinymce/tinymce-vue'
 import css from '@/utils/tinymce-custom.js'
+import router from '@/router'
 
 export default {
 
@@ -96,6 +87,7 @@ export default {
 
     data() {
         return {
+            id: null,
             article: null,
             selectCategories: [],
             formErrors: {},
@@ -157,24 +149,36 @@ export default {
 
     methods: {
 
+        createArticle() {
+            this.article = {
+                title: '',
+                meta_desc: '',
+                perex: '',
+                content: '',
+                categories: [],
+            }
+        },
+
         getArticle() {
-            axios.get( apiRoutes.ARTICLE_EDIT_URL + this.$route.params.id )
+            axios.get( apiRoutes.ARTICLE_EDIT_URL + this.id )
                 .then( response => {
                     this.article = response.data.article;
-                    this.selectCategories = response.data.selectCategories;
                 })
                 .catch( response => {
                     this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa načítať článok.'});
                 });
         },
 
-        saveArticle(e) {
-            axios.post( apiRoutes.ARTICLE_STORE_URL + this.article.id, this.article )
+        storeArticle(e) {
+            let url = apiRoutes.ARTICLE_STORE_URL + (this.article.id ? this.article.id : '');
+            axios.post( url, this.article )
                 .then( response => {
                     if(response.data.error) this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': response.data.error});
                     else this.$store.dispatch('alerts/setAlert', {'type': 'success', 'msg': 'Článok bol uložený.'});
+                    if( !this.id ) router.push( {name: 'Article edit', params: {id: response.data.id}} );
                 })
                 .catch( error => {
+                    console.log(error);
                     if ( error.response?.data?.errors ) {
                         this.formErrors = error.response.data.errors;
                     }
@@ -224,11 +228,22 @@ export default {
     },
 
     created () {
-        this.getArticle();
+        this.id = this.$route.params.id;
+
+        axios( apiRoutes.CATEGORIES_SELECT_URL )
+            .then( response => {
+                this.selectCategories = response.data.selectCategories;
+            })
+            .catch( error => {
+                this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa načítať kategórie.'});
+            });
+
+        if ( this.id ) this.getArticle();
+        else this.createArticle();
     },
 
     components: {
-        Header, SideBar, Editor
+        Editor
     },
 };
 

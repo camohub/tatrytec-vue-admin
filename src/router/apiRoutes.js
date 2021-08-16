@@ -27,4 +27,6 @@ export default {
     
     CATEGORIES_URL: API_URL + 'api/categories',
 
+    CATEGORIES_SELECT_URL: API_URL + 'api/category/select-categories',
+
 }

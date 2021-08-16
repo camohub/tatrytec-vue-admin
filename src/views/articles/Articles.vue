@@ -1,17 +1,8 @@
 <template>
-    <div>
-        <Header />
-        <div class="container-fluid">
-            <div class="row">
-                <SideBar />
+    <div class="col-9 col-md-10">
+        <h2>Articles</h2>
 
-                <div class="col-9 col-md-10">
-                    <h2>Articles</h2>
-
-                    <ArticlesDataTable />
-                </div>
-            </div>
-        </div>
+        <ArticlesDataTable />
     </div>
 </template>
 
@@ -19,8 +10,6 @@
 <script>
 
 // @ is an alias to /src
-import Header from "@/components/Header.vue";
-import SideBar from "@/components/SideBar.vue";
 import ArticlesDataTable from '@/components/articles/ArticlesDataTable.vue';
 
 export default {
@@ -36,8 +25,6 @@ export default {
     },
 
     components: {
-        Header,
-        SideBar,
         ArticlesDataTable,
     }
 };
