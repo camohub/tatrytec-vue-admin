@@ -8,16 +8,11 @@ const routes = [
     component: Dashboard
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  },
-  {
     path: '/login',
     name: 'Login',
+	  // route level code-splitting
+	  // this generates a separate chunk (about.[hash].js) for this route
+	  // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "login" */ '../views/Login.vue')
   },
   {
@@ -36,14 +31,29 @@ const routes = [
     component: () => import(/* webpackChunkName: "article edit" */ '../views/articles/ArticleEdit.vue')
   },
   {
+    path: '/categories',
+    name: 'Categories',
+    component: () => import(/* webpackChunkName: "categories" */ '../views/categories/Categories.vue')
+  },
+  {
     path: '/category/create',
     name: 'Category create',
-    component: () => import(/* webpackChunkName: "category create" */ '../views/CategoryCreate.vue')
+    component: () => import(/* webpackChunkName: "categories" */ '../views/categories/CategoryCreate.vue')
+  },
+  {
+    path: '/category/edit/:id',
+    name: 'Category edit',
+    component: () => import(/* webpackChunkName: "categories" */ '../views/categories/CategoryEdit.vue')
   },
   {
     path: '/users',
     name: 'Users',
-    component: () => import(/* webpackChunkName: "users" */ '../views/Users.vue')
+    component: () => import(/* webpackChunkName: "users" */ '../views/users/Users.vue')
+  },
+  {
+    path: '/user/create',
+    name: 'User create',
+    component: () => import(/* webpackChunkName: "users" */ '../views/users/UserCreate.vue')
   }
 ]
 

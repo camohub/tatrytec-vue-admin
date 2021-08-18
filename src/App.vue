@@ -1,7 +1,7 @@
 <template>
     <div>
         <Header />
-        <div class="container-fluid">
+        <div class="container-fluid pb-5">
             <div class="row">
                 <SideBar />
                 <router-view></router-view>
@@ -63,7 +63,7 @@ div.table-responsive {
     margin-bottom: 50px;
 }
 
-#articlesDataTable_length {
+.dataTables_length {
     select {
         margin-left: 7px;
         margin-right: 7px;
@@ -78,6 +78,51 @@ label {
     display: inline-block;
     margin-top: 7px;
     font-weight: bold;
+}
+
+
+#sortableListsWrapper {
+	margin: 14px 0 14px 0;
+	padding: 2px;
+	border: 2px solid #FAFAFA;
+}
+
+#sortableListsWrapper ul.sortable,
+#s-l-base {
+	margin-left: 0;
+	list-style-type: none;
+}
+
+#sortableListsWrapper ul,
+#s-l-base ul {
+	padding: 0;
+	margin: 0 0 0 80px;
+	color: #375f8e;
+	list-style-type: none;
+
+	&.sortable {
+		 margin-left: 0;
+	}
+}
+
+#sortableListsWrapper ul li,
+#s-l-base li {
+	background-color: #fff;
+	font-weight: bold;
+}
+
+#sortableListsWrapper ul li div,
+#s-l-base div {
+	padding: 14px 14px 14px 20px;
+	background-color: #FAFAFA;
+	border: 1px solid #fff;
+	border-radius: 3px;
+}
+
+#sortableListsWrapper .action,
+#s-l-base .action {
+	float: right;
+	margin-left: 12px;
 }
 
 </style>

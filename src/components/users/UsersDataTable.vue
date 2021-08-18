@@ -1,33 +1,32 @@
 
 <template>
-    <div class="table-responsive">
-        <table :id="id" class="table table-striped table-bordered table-hover nowrap" width="100%;">
+	<div class="table-responsive">
+        <table :id="id" class="table table-striped table-bordered table-hover" style="width:100% !important;">
             <thead>
                 <tr>
                     <th>id</th>
-                    <th>Title</th>
+                    <th>Name</th>
+                    <th>Email</th>
                     <th>Created</th>
-                    <th>Visible</th>
-                    <th>Author</th>
+                    <th>Active</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="article in articles" :key="article.id">
-                    <td>{{article.id}}</td>
-                    <td>{{article.title}}</td>
-                    <td data-order='{{article.created_at}}'>{{getCreatedAt(article.created_at)}}</td>
-                    <td :class="article.visible ? 'text-success' : 'text-danger'">{{article.visible ? 'visible' : 'hidden'}}</td>
-                    <td>{{article.user.name}}</td>
+                <tr v-for="user in users" :key="user.id">
+                    <td>{{user.id}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.email}}</td>
+                    <td data-order='{{user.created_at}}'>{{getCreatedAt(user.created_at)}}</td>
+                    <td :class="user.deleted_at ? 'text-danger' : 'text-success'">{{user.deleted_at ? 'deleted' : 'active'}}</td>
                     <td class="actions">
-                        <router-link :to="'/article/edit/' + article.id" class="action"><font-awesome-icon icon="pencil-alt" /></router-link> 
-                        <a href="#" @click.prevent="toggleVisibility(article.id)" class="action"><font-awesome-icon icon="eye" /></a> 
-                        <a href="#" @click.prevent="deleteArticle(article.id, $event)" class="action text-danger deleteBtn"><font-awesome-icon icon="trash" /></a>
+                        <router-link :to="'/user/edit/' + user.id" class="action"><font-awesome-icon icon="pencil-alt" /></router-link>
+                        <a href="#" @click.prevent="toggleDelete(user.id)" class="action"><font-awesome-icon icon="eye" /></a>
                     </td>
                 </tr>
             </tbody>
         </table>
-    </div>
+	</div>
 </template>
 
 
@@ -39,12 +38,14 @@ import apiRoutes from "@/router/apiRoutes"
 import $ from 'jquery'
 //Datatable Modules
 import "datatables.net-dt/js/dataTables.dataTables"
-//import "datatables.net-dt/css/jquery.dataTables.min.css"
+import "datatables.net-dt/css/jquery.dataTables.min.css"
 
 
 import 'bootstrap/dist/css/bootstrap.min.css'
-import "datatables.net-bs4/css/dataTables.bootstrap4.css"
-import "datatables.net-bs4/js/dataTables.bootstrap4.js"
+//import "datatables.net-bs4/css/dataTables.bootstrap4.css"
+//import "datatables.net-bs4/js/dataTables.bootstrap4.js"
+
+//import 'datatables.net-bs4'
 
 // fa font awesome
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -55,12 +56,12 @@ library.add(faPencilAlt, faTrash, faEye)
 
 export default {
 
-    name: 'ArticlesDataTable',
+    name: 'UsersDataTable',
 
     data() {
         return {
-            id: "articlesDataTable",
-            articles: [],
+            id: "usersDataTable",
+            users: [],
             dataTableObject: null,
         }
     },
@@ -73,48 +74,36 @@ export default {
 
     methods: {
 
-        getArticles() {
-            axios.get( apiRoutes.ARTICLES_URL ) 
+        getUsers() {
+            axios.get( apiRoutes.USERS_URL )
                 .then((response) => {
-                    this.articles = response.data.articles;
+            	console.log(response.data);
+					if( response.data.error ) return this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': response.data.error});
+
+                    this.users = response.data.users;
 
                     this.$nextTick(function() {
                         this.setDataTable();
                     });
                 })
-                .catch( error => {
-                    console.log(error);
-                    this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa načítať články.'});
+                .catch((response) => {
+                    console.log(response);
+                    this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa načítať uživateľov.'});
                 });
         },
 
-        toggleVisibility(id) {
+        toggleDelete(id) {
             axios.get( apiRoutes.ARTICLE_VISIBILITY_URL + id )
                 .then( response => {
 
                     if( response.data.error ) return this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': response.data.error});
 
                     this.getArticles();
-                    this.$store.dispatch('alerts/setAlert', {'type': 'success', 'msg': 'Viditeľnosť článku bola zmenená.'});
-                })
-                .catch( error => {
-                    console.log(error);
-                    this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa zmeniť viviteľnosti článku.'});
-                }); 
-        },
-
-        deleteArticle(id, e) {
-            axios.get( apiRoutes.ARTICLE_DELETE_URL + id )
-                .then( response => {
-
-                    if( response.data.error ) return this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': response.data.error});
-
-                    this.dataTableObject.row( $(e.target).closest('tr') ).remove().draw();
-                    this.$store.dispatch('alerts/setAlert', {'type': 'success', 'msg': 'Článok bol vymazaný.'});
+                    this.$store.dispatch('alerts/setAlert', {'type': 'success', 'msg': 'Viditeľnosť uživateľa bola zmenená.'});
                 })
                 .catch( response => {
                     console.log(response);
-                    this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa vymazať článok.'});
+                    this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa zmeniť viviteľnosti uživateľa.'});
                 }); 
         },
 
@@ -124,6 +113,7 @@ export default {
             if( this.dataTableObject ) return this.dataTableObject.draw();
 
             this.dataTableObject = table.DataTable({
+            	'responsive': true,
                 "pageLength": 10,
                 "order": [[0, table.data('sort')]],
                 "aoColumnDefs": [
@@ -152,8 +142,7 @@ export default {
     
     // Hook
     created() {
-
-        this.getArticles();
+        this.getUsers();
     },
 
     components: {
@@ -168,6 +157,7 @@ export default {
 <style scoped lang="scss">
 table.dataTable {
     border-collapse: collapse !important;
+	width: 100%;
 }
 
 .actions {

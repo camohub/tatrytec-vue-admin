@@ -10,10 +10,11 @@
 
         <h3>Categories</h3>
         <li><router-link to="/categories">Categories</router-link></li>
-        <li><router-link to="/create/category">Create category</router-link></li>
+        <li><router-link to="/category/create">Create category</router-link></li>
 
         <h3>Users</h3>
-        <li><router-link to="/users">Create categories</router-link></li>
+        <li><router-link to="/users">Users</router-link></li>
+        <li><router-link to="/user/create">Create user</router-link></li>
 
     </ul>
 </template>

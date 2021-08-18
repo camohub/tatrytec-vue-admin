@@ -9,7 +9,7 @@
             </div>
 
             <div class="form-group">
-                <label for="title">Title</label>
+                <label for="title">Titulok</label>
                 <input name="title" v-model="article.title" type="text" class="form-control" id="title" aria-describedby="title">
                 <small v-if="formErrors.title" class="text-danger">{{formErrors.title[0]}}</small>
             </div>                        
@@ -50,7 +50,7 @@
                     v-bind:size="this.selectSize">
                     <option v-for="(category, key) in selectCategories" 
                         :key="key" 
-                        v-bind:value="key">{{category}}</option>
+                        v-bind:value="key.substr(3)">{{category}}</option>
                 </select>
                 <small v-if="formErrors.categories" class="text-danger">{{formErrors.categories[0]}}</small>
             </div>
@@ -160,6 +160,7 @@ export default {
         getArticle() {
             axios.get( apiRoutes.ARTICLE_EDIT_URL + this.id )
                 .then( response => {
+                    if( response.data.error ) return this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': response.data.error});
                     this.article = response.data.article;
                 })
                 .catch( response => {
@@ -181,7 +182,7 @@ export default {
             let url = apiRoutes.ARTICLE_STORE_URL + (this.article.id ? this.article.id : '');
             axios.post( url, this.article )
                 .then( response => {
-                    if(response.data.error) this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': response.data.error});
+                    if(response.data.error) return this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': response.data.error});
                     else this.$store.dispatch('alerts/setAlert', {'type': 'success', 'msg': 'Článok bol uložený.'});
                     if( !this.id ) router.push( {name: 'Article edit', params: {id: response.data.id}} );
                 })
@@ -205,7 +206,8 @@ export default {
             axios.post(url, formData, headers)
                 .then( response => {
                     let data = response.data;
-                    console.log(data);
+                    if( data.error ) return this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': data.error});
+
                     let webUrl = apiRoutes.API_URL_SHORT;
                     filePickerCallback(webUrl + data.filePath);
                 })
