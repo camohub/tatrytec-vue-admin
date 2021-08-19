@@ -1,7 +1,7 @@
 
 <template>
     <div class="table-responsive">
-        <table :id="id" class="table table-striped table-bordered table-hover nowrap" width="100%;">
+        <table :id="id" class="table table-striped table-bordered table-hover nowrap" style="width:100%;">
             <thead>
                 <tr>
                     <th>id</th>
@@ -38,7 +38,7 @@ import apiRoutes from "@/router/apiRoutes"
 //import 'jquery/dist/jquery.min.js';
 import $ from 'jquery'
 //Datatable Modules
-import "datatables.net-dt/js/dataTables.dataTables"
+//import "datatables.net-dt/js/dataTables.dataTables"
 //import "datatables.net-dt/css/jquery.dataTables.min.css"
 
 
@@ -136,6 +136,12 @@ export default {
                     "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Slovak.json",
                 }
             });
+
+            this.dataTableObject.on('draw', function(e) {
+                $(this).closest('.dataTables_wrapper')
+                    .removeClass('form-inline')
+                    .find('.col-xs-12').addClass('col-12');
+            });
         },
 
         getCreatedAt(timestamp) {
@@ -166,6 +172,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+
 table.dataTable {
     border-collapse: collapse !important;
 }

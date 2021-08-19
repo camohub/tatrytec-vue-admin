@@ -1,13 +1,11 @@
 
 <template>
-	<div class="table-responsive">
-        <table :id="id" class="table table-striped table-bordered table-hover" style="width:100% !important;">
+    <div class="table-responsive">
+        <table :id="id" class="table table-striped table-bordered table-hover nowrap" style="width:100%;">
             <thead>
                 <tr>
                     <th>id</th>
                     <th>Name</th>
-                    <th>Email</th>
-                    <th>Created</th>
                     <th>Active</th>
                     <th></th>
                 </tr>
@@ -16,8 +14,6 @@
                 <tr v-for="user in users" :key="user.id">
                     <td>{{user.id}}</td>
                     <td>{{user.name}}</td>
-                    <td>{{user.email}}</td>
-                    <td data-order='{{user.created_at}}'>{{getCreatedAt(user.created_at)}}</td>
                     <td :class="user.deleted_at ? 'text-danger' : 'text-success'">{{user.deleted_at ? 'deleted' : 'active'}}</td>
                     <td class="actions">
                         <router-link :to="'/user/edit/' + user.id" class="action"><font-awesome-icon icon="pencil-alt" /></router-link>
@@ -26,26 +22,24 @@
                 </tr>
             </tbody>
         </table>
-	</div>
+    </div>
 </template>
 
 
 <script>
 
 import apiRoutes from "@/router/apiRoutes"
-//Bootstrap and jQuery libraries
-//import 'jquery/dist/jquery.min.js';
-import $ from 'jquery'
-//Datatable Modules
-import "datatables.net-dt/js/dataTables.dataTables"
-import "datatables.net-dt/css/jquery.dataTables.min.css"
-
-
 import 'bootstrap/dist/css/bootstrap.min.css'
-//import "datatables.net-bs4/css/dataTables.bootstrap4.css"
+//import $ from 'jquery'
+//Datatable Modules
+//import "datatables.net-dt/js/dataTables.dataTables"
+//import "datatables.net-dt/css/jquery.dataTables.min.css"
+
+
+import "datatables.net-bs4/css/dataTables.bootstrap4.css"
 //import "datatables.net-bs4/js/dataTables.bootstrap4.js"
 
-//import 'datatables.net-bs4'
+import 'datatables.net-bs4'
 
 // fa font awesome
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -77,8 +71,8 @@ export default {
         getUsers() {
             axios.get( apiRoutes.USERS_URL )
                 .then((response) => {
-            	console.log(response.data);
-					if( response.data.error ) return this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': response.data.error});
+                    console.log(response.data);
+                    if( response.data.error ) return this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': response.data.error});
 
                     this.users = response.data.users;
 
@@ -113,7 +107,7 @@ export default {
             if( this.dataTableObject ) return this.dataTableObject.draw();
 
             this.dataTableObject = table.DataTable({
-            	'responsive': true,
+                'responsive': true,
                 "pageLength": 10,
                 "order": [[0, table.data('sort')]],
                 "aoColumnDefs": [
@@ -125,6 +119,12 @@ export default {
                 "language": {
                     "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Slovak.json",
                 }
+            });
+
+            this.dataTableObject.on('draw', function(e) {
+                $(this).closest('.dataTables_wrapper')
+                    .removeClass('form-inline')
+                    .find('.col-xs-12').addClass('col-12');
             });
         },
 
@@ -155,9 +155,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+
 table.dataTable {
     border-collapse: collapse !important;
-	width: 100%;
+    width: 100%;
+
+    #usersDataTable_wrapper.form-inline {
+        display: block;
+    }
 }
 
 .actions {
@@ -167,6 +172,11 @@ table.dataTable {
 
 .action {
     margin-left: 12px;
+}
+
+table.dataTable thead th, table.dataTable thead td {
+    padding: 8px 10px;
+    border-bottom: none;
 }
 
 </style>
