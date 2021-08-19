@@ -1,54 +1,53 @@
 <template>
-    <div>
-        <form v-if="this.user" @submit.prevent="storeUser($event)">
+    <form v-if="this.user" @submit.prevent="storeUser($event)">
 
-            <div class="form-group">
-                <label for="meta_desc">Meno</label>
-                <input name="name" v-model="this.user.name" type="text" class="form-control" id="name" aria-describedby="name">
-                <small v-if="formErrors.name" class="text-danger">{{formErrors.name[0]}}</small>
-            </div>
+        <div class="form-group">
+            <label for="meta_desc">Meno</label>
+            <input name="name" v-model="this.user.name" type="text" class="form-control" id="name" aria-describedby="name">
+            <small v-if="formErrors.name" class="text-danger">{{formErrors.name[0]}}</small>
+        </div>
 
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input name="email" v-model="this.user.email" type="text" class="form-control" id="email" aria-describedby="email">
-                <small v-if="formErrors.email" class="text-danger">{{formErrors.email[0]}}</small>
-            </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input name="email" v-model="this.user.email" type="text" class="form-control" id="email" aria-describedby="email">
+            <small v-if="formErrors.email" class="text-danger">{{formErrors.email[0]}}</small>
+        </div>
 
-            <div class="form-group">
-                <label for="password">Heslo</label>
-                <input name="password" v-model="this.user.password" type="password" class="form-control" id="pasword" aria-describedby="password">
-                <small v-if="formErrors.password" class="text-danger">{{formErrors.password[0]}}</small>
-            </div>
+        <div class="form-group">
+            <label for="password">Heslo</label>
+            <input name="password" v-model="this.user.password" type="password" class="form-control" id="pasword" aria-describedby="password">
+            <small v-if="formErrors.password" class="text-danger">{{formErrors.password[0]}}</small>
+        </div>
 
-            <div class="form-group">
-                <label for="password_confirmation">Zopakujte heslo</label>
-                <input name="password_confirmation" v-model="this.user.password_confirmation" type="password" class="form-control" id="pasword_confirmation" aria-describedby="password_confirmation">
-                <small v-if="formErrors.password_confirmation" class="text-danger">{{formErrors.password_confirmation[0]}}</small>
-            </div>
-
+        <div class="form-group">
+            <label for="password_confirmation">Zopakujte heslo</label>
+            <input name="password_confirmation" v-model="this.user.password_confirmation" type="password" class="form-control" id="pasword_confirmation" aria-describedby="password_confirmation">
+            <small v-if="formErrors.password_confirmation" class="text-danger">{{formErrors.password_confirmation[0]}}</small>
+        </div>
 
 
-			<div class="form-group">
-				<label for="content">Role</label>
-				<select name="roles"
-						v-model="user.roles"
-						id="roles"
-						multiple
-						class="form-control col-md-5"
-						v-bind:size="this.selectSize">
-					<option v-for="role in selectRoles"
-							:key="role.id"
-							v-bind:value="role.id">{{role.name}}</option>
-				</select>
-				<small v-if="formErrors.roles" class="text-danger">{{formErrors.roles[0]}}</small>
-			</div>
 
-            <div class="form-group">
-                <input type="submit" class="btn btn-md btn-primary" value="Uložiť">
-            </div>
-            
-        </form>
-    </div>
+        <div class="form-group">
+            <label for="content">Role</label>
+            <select name="roles"
+                    v-model="user.roles"
+                    id="roles"
+                    multiple
+                    class="form-control col-md-5"
+                    v-bind:size="this.selectSize">
+                <option v-for="role in selectRoles"
+                        :key="role.id"
+                        v-bind:value="role.id">{{role.name}}</option>
+            </select>
+            <small v-if="formErrors.roles" class="text-danger">{{formErrors.roles[0]}}</small>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" class="btn btn-md btn-primary" value="Uložiť">
+        </div>
+    </form>
+
+    <Loader v-if="loading" />
 </template>
 
 
@@ -58,6 +57,8 @@
 import { ref } from "vue"
 import apiRoutes from "@/router/apiRoutes"
 import router from '@/router'
+import Loader from '@/components/Loader'
+
 
 export default {
 
@@ -70,6 +71,7 @@ export default {
             user: null,
             selectRoles: [],
             formErrors: {},
+            loading: false,
         }
     },
 
@@ -78,14 +80,15 @@ export default {
         createUser() {
             this.user = {
                 name: '',
-				email: '',
-				password: '',
-				password_confirmation: '',
-				roles: [],
+                email: '',
+                password: '',
+                password_confirmation: '',
+                roles: [],
             }
         },
 
         getUser() {
+            this.loading = true;
             axios.get( apiRoutes.USER_EDIT_URL + this.id )
                 .then( response => {
                     if( response.data.error ) return this.$store.dispatch('alerts/setErrorAlert', response.data.error);
@@ -93,10 +96,12 @@ export default {
                 })
                 .catch( response => {
                     this.$store.dispatch('alerts/setErrorAlert', 'Nepodarilo sa načítať profil.');
-                });
+                })
+                .then( () => this.loading = false );
         },
 
         storeUser(e) {
+            this.loading = true;
             let url = apiRoutes.USER_STORE_URL + (this.user.id ? this.user.id : '');
             axios.post( url, this.user )
                 .then( response => {
@@ -113,18 +118,21 @@ export default {
                     }
 
                     this.$store.dispatch('alerts/setErrorAlert', 'Pri ukladaní došlo k chybe.');
-                });
+                })
+                .then( () => this.loading = false );
         },
 
-		getSelectRoles() {
-			axios( apiRoutes.USERS_ROLES_SELECT_URL )
-				.then( response => {
-					this.selectRoles = response.data.selectRoles;
-				})
-				.catch( error => {
-					this.$store.dispatch('alerts/setErrorAlert', 'Nepodarilo sa načítať uživetľské role.');
-				});
-		},
+        getSelectRoles() {
+            this.loading = true;
+            axios( apiRoutes.USERS_ROLES_SELECT_URL )
+                .then( response => {
+                    this.selectRoles = response.data.selectRoles;
+                })
+                .catch( error => {
+                    this.$store.dispatch('alerts/setErrorAlert', 'Nepodarilo sa načítať uživetľské role.');
+                })
+                .then( () => this.loading = false );
+        },
     },
 
     computed: {
@@ -134,11 +142,15 @@ export default {
     },
 
     created () {
-		if( this.id ) this.getUser();
+        if( this.id ) this.getUser();
         else this.createUser();
 
         this.getSelectRoles();
     },
+
+    components: {
+        Loader
+    }
 };
 
 </script>

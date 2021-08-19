@@ -23,6 +23,7 @@
             </tbody>
         </table>
     </div>
+    <Loader v-if="loading" />
 </template>
 
 
@@ -47,6 +48,8 @@ import { faPencilAlt, faEye, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 library.add(faPencilAlt, faTrash, faEye)
 
+import Loader from '@/components/Loader'
+
 
 export default {
 
@@ -57,12 +60,14 @@ export default {
             id: "usersDataTable",
             users: [],
             dataTableObject: null,
+            loading: false,
         }
     },
 
     methods: {
 
         getUsers() {
+            this.loading = true;
             axios.get( apiRoutes.USERS_URL )
                 .then((response) => {
                     console.log(response.data);
@@ -77,10 +82,12 @@ export default {
                 .catch((response) => {
                     console.log(response);
                     this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa načítať uživateľov.'});
-                });
+                })
+                .then(() => this.loading = false);
         },
 
         toggleDelete(id) {
+            this.loading = true;
             axios.get( apiRoutes.USER_TOGGLE_DELETE_URL + id )
                 .then( response => {
 
@@ -92,7 +99,8 @@ export default {
                 .catch( response => {
                     console.log(response);
                     this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa zmeniť viviteľnosti uživateľa.'});
-                }); 
+                    this.loading = false;
+                });
         },
 
         setDataTable() {
@@ -140,7 +148,7 @@ export default {
     },
 
     components: {
-        'font-awesome-icon': FontAwesomeIcon,
+        'font-awesome-icon': FontAwesomeIcon, Loader
     },
 }
 </script>
