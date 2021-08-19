@@ -31,7 +31,7 @@ export default {
 	USERS_URL: API_URL + 'api/users',
 	USER_EDIT_URL: API_URL + 'api/user/edit/',
 	USER_STORE_URL: API_URL + 'api/user/store/',
-	USER_DELETE_URL: API_URL + 'api/user/delete/',
+	USER_TOGGLE_DELETE_URL: API_URL + 'api/user/toggle-delete/',
 	USERS_ROLES_SELECT_URL: API_URL + 'api/user/select-roles/',
 
 }

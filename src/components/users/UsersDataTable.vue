@@ -60,12 +60,6 @@ export default {
         }
     },
 
-    computed: {
-        issetArticles() {
-            return this.articles.length > 0;
-        }
-    },
-
     methods: {
 
         getUsers() {
@@ -87,12 +81,12 @@ export default {
         },
 
         toggleDelete(id) {
-            axios.get( apiRoutes.ARTICLE_VISIBILITY_URL + id )
+            axios.get( apiRoutes.USER_TOGGLE_DELETE_URL + id )
                 .then( response => {
 
                     if( response.data.error ) return this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': response.data.error});
 
-                    this.getArticles();
+                    this.getUsers();
                     this.$store.dispatch('alerts/setAlert', {'type': 'success', 'msg': 'Viditeľnosť uživateľa bola zmenená.'});
                 })
                 .catch( response => {
