@@ -65,11 +65,11 @@ export default {
         getCategory() {
             axios.get( apiRoutes.CATEGORY_EDIT_URL + this.id )
                 .then( response => {
-                    if( response.data.error ) return this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': response.data.error});
+                    if( response.data.error ) return this.$store.dispatch('alerts/setErrorAlert', response.data.error);
                     this.category = response.data.category;
                 })
                 .catch( response => {
-                    this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa načítať kategóriu.'});
+                    this.$store.dispatch('alerts/setErrorAlert', 'Nepodarilo sa načítať kategóriu.');
                 });
         },
         
@@ -80,7 +80,7 @@ export default {
                     this.selectCategories = response.data.selectCategories;
                 })
                 .catch( error => {
-                    this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa načítať kategórie.'});
+                    this.$store.dispatch('alerts/setErrorAlert', 'Nepodarilo sa načítať kategórie.');
                 });
         },
 
@@ -88,8 +88,10 @@ export default {
             let url = apiRoutes.CATEGORY_STORE_URL + (this.category.id ? this.category.id : '');
             axios.post( url, this.category )
                 .then( response => {
-                    if(response.data.error) return this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': response.data.error});
-                    else this.$store.dispatch('alerts/setAlert', {'type': 'success', 'msg': 'Kategória bola uložená.'});
+                    if(response.data.error) return this.$store.dispatch('alerts/setErrorAlert', response.data.error);
+                    else this.$store.dispatch('alerts/setSuccessAlert', 'Kategória bola uložená.');
+
+                    this.formErrors = {};
                     if( !this.id ) router.push( {name: 'Category edit', params: {id: response.data.id}} );
                 })
                 .catch( error => {
@@ -98,7 +100,7 @@ export default {
                         this.formErrors = error.response.data.errors;
                     }
 
-                    this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Pri ukladaní došlo k chybe.'});
+                    this.$store.dispatch('alerts/setErrorAlert', 'Pri ukladaní došlo k chybe.');
                 });
         },
     },
