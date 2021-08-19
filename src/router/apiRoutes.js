@@ -26,12 +26,12 @@ export default {
 	CATEGORY_VISIBILITY_URL: API_URL + 'api/category/visibility/',
 	CATEGORY_DELETE_URL: API_URL + 'api/category/delete/',
 	CATEGORIES_SORT_URL: API_URL + 'api/categories/sort?',
-
     CATEGORIES_SELECT_URL: API_URL + 'api/category/select-categories',
 
 	USERS_URL: API_URL + 'api/users',
 	USER_EDIT_URL: API_URL + 'api/user/edit/',
 	USER_STORE_URL: API_URL + 'api/user/store/',
 	USER_DELETE_URL: API_URL + 'api/user/delete/',
+	USERS_ROLES_SELECT_URL: API_URL + 'api/user/select-roles/',
 
 }

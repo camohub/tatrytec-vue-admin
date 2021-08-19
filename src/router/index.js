@@ -38,12 +38,12 @@ const routes = [
   {
     path: '/category/create',
     name: 'Category create',
-    component: () => import(/* webpackChunkName: "categories" */ '../views/categories/CategoryCreate.vue')
+    component: () => import(/* webpackChunkName: "category create" */ '../views/categories/CategoryCreate.vue')
   },
   {
     path: '/category/edit/:id',
     name: 'Category edit',
-    component: () => import(/* webpackChunkName: "categories" */ '../views/categories/CategoryEdit.vue')
+    component: () => import(/* webpackChunkName: "category edit" */ '../views/categories/CategoryEdit.vue')
   },
   {
     path: '/users',
@@ -53,7 +53,12 @@ const routes = [
   {
     path: '/user/create',
     name: 'User create',
-    component: () => import(/* webpackChunkName: "users" */ '../views/users/UserCreate.vue')
+    component: () => import(/* webpackChunkName: "user create" */ '../views/users/UserCreate.vue')
+  },
+  {
+    path: '/user/edit/:id',
+    name: 'User edit',
+    component: () => import(/* webpackChunkName: "user edit" */ '../views/users/UserEdit.vue')
   }
 ]
 
