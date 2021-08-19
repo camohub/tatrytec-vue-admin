@@ -160,11 +160,11 @@ export default {
         getArticle() {
             axios.get( apiRoutes.ARTICLE_EDIT_URL + this.id )
                 .then( response => {
-                    if( response.data.error ) return this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': response.data.error});
+                    if( response.data.error ) return this.$store.dispatch('alerts/setErrorAlert', response.data.error);
                     this.article = response.data.article;
                 })
                 .catch( response => {
-                    this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa načítať článok.'});
+                    this.$store.dispatch('alerts/setErrorAlert', 'Nepodarilo sa načítať článok.');
                 });
         },
         
@@ -174,7 +174,7 @@ export default {
                     this.selectCategories = response.data.selectCategories;
                 })
                 .catch( error => {
-                    this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa načítať kategórie.'});
+                    this.$store.dispatch('alerts/setErrorAlert', 'Nepodarilo sa načítať kategórie.');
                 });
         },
 
@@ -182,8 +182,10 @@ export default {
             let url = apiRoutes.ARTICLE_STORE_URL + (this.article.id ? this.article.id : '');
             axios.post( url, this.article )
                 .then( response => {
-                    if(response.data.error) return this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': response.data.error});
-                    else this.$store.dispatch('alerts/setAlert', {'type': 'success', 'msg': 'Článok bol uložený.'});
+                    if(response.data.error) return this.$store.dispatch('alerts/setErrorAlert', response.data.error);
+                    else this.$store.dispatch('alerts/setSuccessAlert', 'Článok bol uložený.');
+
+                    this.formErrors = {};
                     if( !this.id ) router.push( {name: 'Article edit', params: {id: response.data.id}} );
                 })
                 .catch( error => {
@@ -192,7 +194,7 @@ export default {
                         this.formErrors = error.response.data.errors;
                     }
 
-                    this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Pri ukladaní došlo k chybe.'});
+                    this.$store.dispatch('alerts/setErrorAlert', 'Pri ukladaní došlo k chybe.');
                 });
         },
 
@@ -206,7 +208,7 @@ export default {
             axios.post(url, formData, headers)
                 .then( response => {
                     let data = response.data;
-                    if( data.error ) return this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': data.error});
+                    if( data.error ) return this.$store.dispatch('alerts/setErrorAlert', data.error);
 
                     let webUrl = apiRoutes.API_URL_SHORT;
                     filePickerCallback(webUrl + data.filePath);
@@ -216,7 +218,7 @@ export default {
                     console.log(data);
                     let msg = 'Pri ukladaní obrázku došlo k chybe.';
                     if( data.errors.image ) msg += '<br>' + data.errors.image[0];
-                    this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': msg});
+                    this.$store.dispatch('alerts/setErrorAlert', msg);
                 });
         },
 
