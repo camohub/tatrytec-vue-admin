@@ -1,5 +1,5 @@
 <template>
-    <div class="col-9 col-md-10">
+    <div class="col-9 col-md-10 col-xl-8">
         <h2>Articles</h2>
 
         <ArticlesDataTable />
