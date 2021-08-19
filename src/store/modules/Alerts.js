@@ -39,6 +39,34 @@ export default {
 			}, 7000, data.id, context);
 		},
 
+		setSuccessAlert(context, msg)
+		{
+			let data = {
+				id: 'alertId' + parseInt((Math.random() * 10000000000)),
+				type: 'success',
+				msg: msg,
+			}
+			context.commit('SET_ALERT', data);  // data has to be in format {type: 'xxx', 'msg': 'xxx', 'id': 'alertId123456789'}
+
+			setTimeout( (id, context) => {
+				context.commit('TIMEOUT_REMOVE_ALERT', id);
+			}, 7000, data.id, context);
+		},
+
+		setErrorAlert(context, msg)
+		{
+			let data = {
+				id: 'alertId' + parseInt((Math.random() * 10000000000)),
+				type: 'error',
+				msg: msg,
+			}
+			context.commit('SET_ALERT', data);  // data has to be in format {type: 'xxx', 'msg': 'xxx', 'id': 'alertId123456789'}
+
+			setTimeout( (id, context) => {
+				context.commit('TIMEOUT_REMOVE_ALERT', id);
+			}, 7000, data.id, context);
+		},
+
 		setErrorAlerts(context, errors)
 		{
 			errors.forEach(msg => {
