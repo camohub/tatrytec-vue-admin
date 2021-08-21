@@ -140,7 +140,6 @@ export default {
 	components: {
 		CategoriesList,
 		'font-awesome-icon': FontAwesomeIcon,
-		Loader,
 	},
 };
 

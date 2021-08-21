@@ -19,6 +19,7 @@
 import { ref } from "vue"
 import apiRoutes from '@/router/apiRoutes'
 import CategoriesList from '@/components/categories/CategoriesList'
+import Loader from '@/components/Loader'
 
 
 export default {
@@ -90,7 +91,7 @@ export default {
 	},
 
 	components: {
-		CategoriesList
+		CategoriesList, Loader
 	},
 };
 
