@@ -99,8 +99,8 @@ export default {
                 .catch( response => {
                     console.log(response);
                     this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa zmeniť viviteľnosti uživateľa.'});
-                    this.loading--;
-                });
+                })
+				.then( () => this.loading-- );
         },
 
         setDataTable() {

@@ -89,6 +89,7 @@ export default {
             article: null,
             selectCategories: [],
             formErrors: {},
+			loading: 0,
 
             tinyApiKey: '4hwg3k2s1gzjocmcfx4b8h0xncj2s0af92t6i1czkxed8uvz',
             tinyInit: {
@@ -158,6 +159,7 @@ export default {
         },
 
         getArticle() {
+        	this.loading++;
             axios.get( apiRoutes.ARTICLE_EDIT_URL + this.id )
                 .then( response => {
                     if( response.data.error ) return this.$store.dispatch('alerts/setErrorAlert', response.data.error);
@@ -165,20 +167,24 @@ export default {
                 })
                 .catch( response => {
                     this.$store.dispatch('alerts/setErrorAlert', 'Nepodarilo sa načítať článok.');
-                });
+                })
+				.then( () => this.loading-- );
         },
         
         getSelectCategories() {
+        	this.loading++;
             axios( apiRoutes.CATEGORIES_SELECT_URL )
                 .then( response => {
                     this.selectCategories = response.data.selectCategories;
                 })
                 .catch( error => {
                     this.$store.dispatch('alerts/setErrorAlert', 'Nepodarilo sa načítať kategórie.');
-                });
+                })
+				.then( () => this.loading-- );
         },
 
         storeArticle(e) {
+        	this.loading++;
             let url = apiRoutes.ARTICLE_STORE_URL + (this.article.id ? this.article.id : '');
             axios.post( url, this.article )
                 .then( response => {
@@ -195,11 +201,12 @@ export default {
                     }
 
                     this.$store.dispatch('alerts/setErrorAlert', 'Pri ukladaní došlo k chybe.');
-                });
+                })
+				.then( () => this.loading-- );
         },
 
         storeImage(e, filePickerCallback) {
-
+        	this.loading++;
             let url = apiRoutes.ARTICLE_IMAGE_ADD_URL;
             let headers = {'Content-Type': 'multipart/form-data'};
             let formData = new FormData();
@@ -219,7 +226,8 @@ export default {
                     let msg = 'Pri ukladaní obrázku došlo k chybe.';
                     if( data.errors.image ) msg += '<br>' + data.errors.image[0];
                     this.$store.dispatch('alerts/setErrorAlert', msg);
-                });
+                })
+				.then( () => this.loading++ );
         },
 
         fileHandler(callback, value, meta) {
