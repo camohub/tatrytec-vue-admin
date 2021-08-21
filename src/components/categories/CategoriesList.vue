@@ -29,6 +29,7 @@
 			<CategoriesList v-if="category.all_children?.length" :categories="category.all_children" :level="1 + level" />
 		</li>
 	</ul>
+	<Loader v-if="loading" />
 </template>
 
 
@@ -55,7 +56,7 @@ export default {
 
 	data() {
 		return {
-
+			loading: 0,
 		}
 	},
 
@@ -64,6 +65,7 @@ export default {
 
 			if( !confirm('Naozaj chcete kategóriu zmazať?') ) return;
 
+			this.loading++;
 			let url = apiRoutes.CATEGORY_DELETE_URL + id;
 			axios(url)
 				.then( response => {
@@ -72,11 +74,13 @@ export default {
 				})
 				.catch( error => {
 					this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa zmazať kategóriu.'});
-				});
+				})
+				.then( () => this.loading-- );
 		},
 
 
 		toggleVisibility(e, id) {
+			this.loading++;
 			let url = apiRoutes.CATEGORY_VISIBILITY_URL + id;
 
 			axios.get(url)
@@ -87,7 +91,8 @@ export default {
 				})
 				.catch(function( error ) {
 					showAlert('Pri ukladaní údajov došlo k chybe.', 'error');
-				});
+				})
+				.then( () => this.loading-- );
 		},
 
 
