@@ -28,6 +28,7 @@
             </tbody>
         </table>
     </div>
+    <Loader v-if="loading" />
 </template>
 
 
@@ -62,6 +63,7 @@ export default {
             id: "articlesDataTable",
             articles: [],
             dataTableObject: null,
+            loading: 0,
         }
     },
 
@@ -74,6 +76,7 @@ export default {
     methods: {
 
         getArticles() {
+            this.loading++;
             axios.get( apiRoutes.ARTICLES_URL ) 
                 .then((response) => {
                     this.articles = response.data.articles;
@@ -85,10 +88,12 @@ export default {
                 .catch( error => {
                     console.log(error);
                     this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa načítať články.'});
-                });
+                })
+                .then( () => this.loading-- );
         },
 
         toggleVisibility(id) {
+            this.loading++;
             axios.get( apiRoutes.ARTICLE_VISIBILITY_URL + id )
                 .then( response => {
 
@@ -100,10 +105,12 @@ export default {
                 .catch( error => {
                     console.log(error);
                     this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa zmeniť viviteľnosti článku.'});
-                }); 
+                })
+                .then( () => this.loading-- )
         },
 
         deleteArticle(id, e) {
+            this.loading++;
             axios.get( apiRoutes.ARTICLE_DELETE_URL + id )
                 .then( response => {
 
@@ -115,7 +122,8 @@ export default {
                 .catch( response => {
                     console.log(response);
                     this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa vymazať článok.'});
-                }); 
+                })
+                .then( () => this.loading-- );
         },
 
         setDataTable() {
