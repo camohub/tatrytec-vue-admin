@@ -8,7 +8,13 @@
 <script>
 
 export default {
-    name: 'Loader'
+    name: 'Loader',
+
+	data() {
+    	return {
+
+		}
+	}
 }
 
 </script>
@@ -28,7 +34,7 @@ export default {
 }
 
 .lds-ring {
-    color: $red;
+    color: #41b883;
     display: inline-block;
     position: absolute;
     top: 50%;
@@ -45,11 +51,11 @@ export default {
     width: 50px;
     height: 50px;
     margin: 8px;
-    border: 15px solid $vue-green;
+    border: 15px solid #41b883;
     border-radius: 50%;
     animation: lds-ring 1.2s cubic-bezier(0.2, 0, 0.1, 1) infinite;
-    border-color: $vue-green transparent transparent transparent;
-	box-shadow: 0 0 2px $vue-green;
+    border-color: #41b883 transparent transparent transparent;
+	box-shadow: 0 0 2px #41b883;
 }
 .lds-ring div:nth-child(1) {
     animation-delay: -0.45s;

@@ -60,14 +60,14 @@ export default {
             id: "usersDataTable",
             users: [],
             dataTableObject: null,
-            loading: false,
+            loading: 0,
         }
     },
 
     methods: {
 
         getUsers() {
-            this.loading = true;
+            this.loading++;
             axios.get( apiRoutes.USERS_URL )
                 .then((response) => {
                     console.log(response.data);
@@ -83,11 +83,11 @@ export default {
                     console.log(response);
                     this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa načítať uživateľov.'});
                 })
-                .then(() => this.loading = false);
+                .then(() => this.loading--);
         },
 
         toggleDelete(id) {
-            this.loading = true;
+            this.loading++;
             axios.get( apiRoutes.USER_TOGGLE_DELETE_URL + id )
                 .then( response => {
 
@@ -99,7 +99,7 @@ export default {
                 .catch( response => {
                     console.log(response);
                     this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa zmeniť viviteľnosti uživateľa.'});
-                    this.loading = false;
+                    this.loading--;
                 });
         },
 

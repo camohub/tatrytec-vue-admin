@@ -25,8 +25,6 @@
             <small v-if="formErrors.password_confirmation" class="text-danger">{{formErrors.password_confirmation[0]}}</small>
         </div>
 
-
-
         <div class="form-group">
             <label for="content">Role</label>
             <select name="roles"
@@ -71,7 +69,7 @@ export default {
             user: null,
             selectRoles: [],
             formErrors: {},
-            loading: false,
+            loading: 0,
         }
     },
 
@@ -88,7 +86,7 @@ export default {
         },
 
         getUser() {
-            this.loading = true;
+            this.loading++;
             axios.get( apiRoutes.USER_EDIT_URL + this.id )
                 .then( response => {
                     if( response.data.error ) return this.$store.dispatch('alerts/setErrorAlert', response.data.error);
@@ -97,11 +95,11 @@ export default {
                 .catch( response => {
                     this.$store.dispatch('alerts/setErrorAlert', 'Nepodarilo sa načítať profil.');
                 })
-                .then( () => this.loading = false );
+                .then( () => this.loading-- );
         },
 
         storeUser(e) {
-            this.loading = true;
+            this.loading++;
             let url = apiRoutes.USER_STORE_URL + (this.user.id ? this.user.id : '');
             axios.post( url, this.user )
                 .then( response => {
@@ -119,11 +117,11 @@ export default {
 
                     this.$store.dispatch('alerts/setErrorAlert', 'Pri ukladaní došlo k chybe.');
                 })
-                .then( () => this.loading = false );
+                .then( () => this.loading-- );
         },
 
         getSelectRoles() {
-            this.loading = true;
+            this.loading++;
             axios( apiRoutes.USERS_ROLES_SELECT_URL )
                 .then( response => {
                     this.selectRoles = response.data.selectRoles;
@@ -131,7 +129,7 @@ export default {
                 .catch( error => {
                     this.$store.dispatch('alerts/setErrorAlert', 'Nepodarilo sa načítať uživetľské role.');
                 })
-                .then( () => this.loading = false );
+                .then( () => this.loading-- );
         },
     },
 
