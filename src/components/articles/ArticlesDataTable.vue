@@ -53,6 +53,8 @@ import { faPencilAlt, faEye, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 library.add(faPencilAlt, faTrash, faEye)
 
+import Loader from '@/components/Loader'
+
 
 export default {
 
@@ -171,7 +173,7 @@ export default {
     },
 
     components: {
-        'font-awesome-icon': FontAwesomeIcon,
+        'font-awesome-icon': FontAwesomeIcon, Loader
     },
 }
 </script>

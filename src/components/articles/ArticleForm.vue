@@ -79,6 +79,7 @@ import apiRoutes from "@/router/apiRoutes"
 import Editor from '@tinymce/tinymce-vue'
 import css from '@/utils/tinymce-custom.js'
 import router from '@/router'
+import Loader from '@/components/Loader'
 
 export default {
 
@@ -257,7 +258,7 @@ export default {
     },
 
     components: {
-        Editor
+        Editor, Loader
     },
 };
 
