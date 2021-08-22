@@ -20,7 +20,7 @@
                     <td :class="article.visible ? 'text-success' : 'text-danger'">{{article.visible ? 'visible' : 'hidden'}}</td>
                     <td>{{article.user.name}}</td>
                     <td class="actions">
-                        <router-link :to="'/article/edit/' + article.id" class="action"><font-awesome-icon icon="pencil-alt" /></router-link> 
+                        <router-link :to="{name: 'Article edit', params: { id: article.id}}" class="action"><font-awesome-icon icon="pencil-alt" /></router-link>
                         <a href="#" @click.prevent="toggleVisibility(article.id)" class="action"><font-awesome-icon icon="eye" /></a> 
                         <a href="#" @click.prevent="deleteArticle(article.id, $event)" class="action text-danger deleteBtn"><font-awesome-icon icon="trash" /></a>
                     </td>

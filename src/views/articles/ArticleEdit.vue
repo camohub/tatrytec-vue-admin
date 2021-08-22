@@ -16,15 +16,7 @@ export default {
 
     name: "Article edit",
 
-    data() {
-        return {
-            id: null,
-        }
-    },
-
-    created () {
-        this.id = this.$route.params.id
-    },
+    props: ['id'],
 
     components: {
         ArticleForm

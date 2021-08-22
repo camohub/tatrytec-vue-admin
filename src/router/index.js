@@ -28,7 +28,8 @@ const routes = [
   {
     path: '/article/edit/:id',
     name: 'Article edit',
-    component: () => import(/* webpackChunkName: "article edit" */ '../views/articles/ArticleEdit.vue')
+	props: true,
+	component: () => import(/* webpackChunkName: "article edit" */ '../views/articles/ArticleEdit.vue')
   },
   {
     path: '/categories',
