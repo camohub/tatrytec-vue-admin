@@ -13,7 +13,7 @@
             </div>
 
             <div class="form-group">
-                <label for="password">Email</label>
+                <label for="password">Heslo</label>
                 <input type="password" name="password" v-model="password" class="form-control" />
             </div>
 
