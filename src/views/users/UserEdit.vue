@@ -2,8 +2,8 @@
     <div class="col-9 col-md-6 col-xl-5 offset-xl-1">
         <h2>User edit</h2>
 
-		<UserForm :id="this.id" />
-	</div>
+        <UserForm :id="this.id" />
+    </div>
 </template>
 
 
@@ -16,28 +16,13 @@ import UserForm from '@/components/users/UserForm'
 
 export default {
 
-	name: "User edit",
+    name: "User edit",
 
-	data() {
-		return {
-			id: null,
-		}
-	},
+    props: ['id'],
 
-	methods: {
-
-	},
-
-	computed: {
-	},
-
-	created() {
-		this.id = this.$route.params.id
-	},
-
-	components: {
-		UserForm
-	},
+    components: {
+        UserForm
+    },
 };
 
 </script>

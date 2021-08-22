@@ -16,7 +16,7 @@
                     <td>{{user.name}}</td>
                     <td :class="user.deleted_at ? 'text-danger' : 'text-success'">{{user.deleted_at ? 'deleted' : 'active'}}</td>
                     <td class="actions">
-                        <router-link :to="'/user/edit/' + user.id" class="action"><font-awesome-icon icon="pencil-alt" /></router-link>
+                        <router-link :to="{name: 'User edit', params: {id: user.id}}" class="action"><font-awesome-icon icon="pencil-alt" /></router-link>
                         <a href="#" @click.prevent="toggleDelete(user.id)" class="action"><font-awesome-icon icon="eye" /></a>
                     </td>
                 </tr>
