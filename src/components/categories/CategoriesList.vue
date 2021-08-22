@@ -14,7 +14,7 @@
 					<font-awesome-icon icon="trash" />
 				</a>
 
-				<router-link v-if="category.slug != 'najnovsie'" :to="'/category/edit/' + category.id" class="ignore action">
+				<router-link v-if="category.slug != 'najnovsie'" :to="{name: 'Category edit', params: { id: category.id}}" class="ignore action">
 					<font-awesome-icon icon="pencil-alt" title="Edit" />
 				</router-link>
 

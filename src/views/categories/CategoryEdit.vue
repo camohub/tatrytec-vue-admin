@@ -18,22 +18,7 @@ export default {
 
 	name: "Category edit",
 
-	data() {
-		return {
-			id: null,
-		}
-	},
-
-	methods: {
-
-	},
-
-	computed: {
-	},
-
-	created() {
-		this.id = this.$route.params.id
-	},
+	props: ['id'],
 
 	components: {
 		CategoryForm
