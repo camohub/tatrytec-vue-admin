@@ -102,9 +102,8 @@ export default {
                 })
                 .catch( error => {
                     console.log(error);
-                    if ( error.response?.data?.errors ) {
-                        this.formErrors = error.response.data.errors;
-                    }
+                    if ( error.response?.data?.errors ) this.formErrors = error.response.data.errors;
+                    else this.formErrors = {};
 
                     this.$store.dispatch('alerts/setErrorAlert', 'Pri ukladaní došlo k chybe.');
                 })
