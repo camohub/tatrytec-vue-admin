@@ -17,7 +17,7 @@ echo "---------------------------------------------------"
 echo " chmod -R 770 done "
 echo "---------------------------------------------------"
 
-sed -i 's/http:\/\/localhost:8000/https:\/\/vue.tatrytec.eu/' $www_new_app_dir/src/router/apiRoutes.js
+sed -i 's/http:\/\/localhost:8000/https:\/\/tatrytec.eu/' $www_new_app_dir/src/router/apiRoutes.js
 
 npm install
 npm run build
