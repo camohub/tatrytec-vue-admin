@@ -17,6 +17,8 @@ echo "---------------------------------------------------"
 echo " chmod -R 770 done "
 echo "---------------------------------------------------"
 
+sed -i 's/http:\/\/localhost:8000/https:\/\/vue.tatrytec.eu/' $www_new_app_dir/src/router/apiRoutes.js
+
 npm install
 npm run build
 echo "---------------------------------------------------"
@@ -28,7 +30,6 @@ echo "---------------------------------------------------"
 echo " chmod f + chmod d dome "
 echo "---------------------------------------------------"
 
-sed -i 's/http:\/\/localhost:8000/https:\/\/vue.tatrytec.eu/' $www_new_app_dir/src/router/apiRoutes.js
 mv $www_dir/vue.tatrytec.eu $www_old_app_dir
 echo "---------------------------------------------------"
 echo " old app folder rename done "
