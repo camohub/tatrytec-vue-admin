@@ -63,7 +63,7 @@ export default {
                 password: this.password,
             };
 
-			axios.get('/sanctum/csrf-cookie').then(response => {
+			axios.get('https://tatrytec.eu/sanctum/csrf-cookie').then(response => {
 				axios.post(url, formData)
 					.then((response) => {
 						let data = response.data;
