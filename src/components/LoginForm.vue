@@ -62,27 +62,30 @@ export default {
                 email: this.email,
                 password: this.password,
             };
-        
-            axios.post(url, formData)
-                .then((response) => {
-                    let data = response.data;
 
-                    if( data.errors )
-                    {
-                        this.errors = data.errors;
-                        return;
-                    }
+			axios.get('/sanctum/csrf-cookie').then(response => {
+				axios.post(url, formData)
+					.then((response) => {
+						let data = response.data;
 
-                    this.$store.dispatch('user/setUser', data.user);
-                    this.setToken(data.user.token);
-                    this.$store.dispatch('alerts/setAlert', {'type': 'success', 'msg': 'Vitajte na palube ' + data.user.name});
-                    this.$router.push( {name: 'Dashboard'});
+						if( data.errors )
+						{
+							this.errors = data.errors;
+							return;
+						}
 
-                })
-                .catch((respose) => {
-                    console.log(respose);
-                    this.errors = ['Nepodarilo sa vás prihlásiť.'];
-                });
+						this.$store.dispatch('user/setUser', data.user);
+						this.setToken(data.user.token);
+						this.$store.dispatch('alerts/setAlert', {'type': 'success', 'msg': 'Vitajte na palube ' + data.user.name});
+						this.$router.push( {name: 'Dashboard'});
+
+					})
+					.catch((respose) => {
+						console.log(respose);
+						this.errors = ['Nepodarilo sa vás prihlásiť.'];
+					});
+			});
+
         },
 
         setToken(token) {
