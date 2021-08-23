@@ -63,11 +63,18 @@ div.table-responsive {
     margin-bottom: 50px;
 }
 
-.dataTables_length {
-    select {
-        margin-left: 7px;
-        margin-right: 7px;
-    }
+.dataTables_length select {
+	margin-left: 7px;
+	margin-right: 7px;
+}
+
+.dataTable_filter input {
+	position: relative;
+	left: -2px;
+}
+
+form {
+	max-width: 1000px;
 }
 
 label {

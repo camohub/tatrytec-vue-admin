@@ -1,3 +1,0 @@
-export default {
-    css: 'body { font-size: 14px; } h1 { color: #b63c3c; } h2 { color: #3aa391; } h3 { color: #b63c3c; } h4 { color: #546a7c; } a { color: #bf9966; } pre { padding: 10px; background-color: #f5f8ff; overflow: auto; word-wrap: normal; } .fL { float: left; } .fR { float: right; } img.fL { margin: 7px 14px 5px 0; box-shadow: 3px 3px 7px #555; } img.fR { margin: 7px 0 5px 7px; box-shadow: -3px 3px 7px #555; } .img-fluid { max-width: 100%; height: auto; }'
-}

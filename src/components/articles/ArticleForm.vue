@@ -75,10 +75,9 @@
 
 // @ is an alias to /src
 import { ref } from "vue"
+import router from '@/router'
 import apiRoutes from "@/router/apiRoutes"
 import Editor from '@tinymce/tinymce-vue'
-import css from '@/utils/tinymce-custom.js'
-import router from '@/router'
 import Loader from '@/components/Loader'
 
 export default {
