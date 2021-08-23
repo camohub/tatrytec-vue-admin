@@ -70,7 +70,7 @@ div.table-responsive {
 
 .dataTables_filter input {
 	position: relative;
-	left: -2px;
+	left: -3px;
 }
 
 form {
