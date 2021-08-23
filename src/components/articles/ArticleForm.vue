@@ -188,7 +188,7 @@ export default {
 
         storeArticle(e) {
             this.loading++;
-            let url = apiRoutes.ARTICLE_STORE_URL + (this.article.id ? this.article.id : '');
+            let url = apiRoutes.ARTICLE_STORE_URL + (this.article.id ? '/' + this.article.id : '');
             axios.post( url, this.article )
                 .then( response => {
                     if(response.data.error) return this.$store.dispatch('alerts/setErrorAlert', response.data.error);

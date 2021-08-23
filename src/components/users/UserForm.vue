@@ -100,7 +100,7 @@ export default {
 
         storeUser(e) {
             this.loading++;
-            let url = apiRoutes.USER_STORE_URL + (this.user.id ? this.user.id : '');
+            let url = apiRoutes.USER_STORE_URL + (this.user.id ? '/' + this.user.id : '');
             axios.post( url, this.user )
                 .then( response => {
                     if(response.data.error) return this.$store.dispatch('alerts/setErrorAlert', response.data.error);

@@ -91,7 +91,7 @@ export default {
 
         storeCategory(e) {
             this.loading++;
-            let url = apiRoutes.CATEGORY_STORE_URL + (this.category.id ? this.category.id : '');
+            let url = apiRoutes.CATEGORY_STORE_URL + (this.category.id ? '/' + this.category.id : '');
             axios.post( url, this.category )
                 .then( response => {
                     if(response.data.error) return this.$store.dispatch('alerts/setErrorAlert', response.data.error);
