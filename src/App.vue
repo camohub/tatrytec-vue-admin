@@ -68,7 +68,7 @@ div.table-responsive {
 	margin-right: 7px;
 }
 
-.dataTable_filter input {
+.dataTables_filter input {
 	position: relative;
 	left: -2px;
 }
