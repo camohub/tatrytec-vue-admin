@@ -30,7 +30,6 @@
 <script>
 
 import apiRoutes from "@/router/apiRoutes"
-import 'bootstrap/dist/css/bootstrap.min.css'
 //import $ from 'jquery'
 //Datatable Modules
 //import "datatables.net-dt/js/dataTables.dataTables"
@@ -100,7 +99,7 @@ export default {
                     console.log(response);
                     this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa zmeniť viviteľnosti uživateľa.'});
                 })
-				.then( () => this.loading-- );
+                .then( () => this.loading-- );
         },
 
         setDataTable() {
@@ -154,31 +153,10 @@ export default {
 </script>
 
 
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
+<style scoped>
 
 table.dataTable {
     border-collapse: collapse !important;
-    width: 100%;
-
-    #usersDataTable_wrapper.form-inline {
-        display: block;
-    }
-}
-
-.actions {
-    min-width: 80px;
-    text-align: right;
-}
-
-.action {
-    margin-left: 12px;
-}
-
-table.dataTable thead th, table.dataTable thead td {
-    padding: 8px 10px;
-    border-bottom: none;
 }
 
 </style>

@@ -16,23 +16,9 @@ export default {
 
     name: "Articles",
 
-    data() {
-        return {}
-    },
-
-    methods: {
-
-    },
-
     components: {
         ArticlesDataTable,
     }
 };
 
 </script>
-
-
-<style lang="scss" scoped>
-
-
-</style>

@@ -177,21 +177,10 @@ export default {
 </script>
 
 
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
+<style scoped>
 
 table.dataTable {
     border-collapse: collapse !important;
-}
-
-.actions {
-    min-width: 80px;
-    text-align: right;
-}
-
-.action {
-    margin-left: 12px;
 }
 
 </style>
