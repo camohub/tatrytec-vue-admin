@@ -32,6 +32,6 @@ export default {
 	USER_EDIT_URL: API_URL + 'api/user/edit/',
 	USER_STORE_URL: API_URL + 'api/user/store',  // Trailing slash causes the CORS issue with redirect to url without slash.
 	USER_TOGGLE_DELETE_URL: API_URL + 'api/user/toggle-delete/',
-	USERS_ROLES_SELECT_URL: API_URL + 'api/user/select-roles/',
+	USERS_ROLES_SELECT_URL: API_URL + 'api/user/select-roles',
 
 }
