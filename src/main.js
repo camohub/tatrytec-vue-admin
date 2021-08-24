@@ -17,7 +17,7 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 // page load and set up storage.user if authCheck is true.
 import axios from "axios"
 window.axios = axios;
-axios.defaults.baseURL = apiRoutes.API_URL_SHORT;
+//axios.defaults.baseURL = apiRoutes.API_URL_SHORT;
 axios.defaults.withCredentials = true;
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 let authToken = localStorage.getItem('authToken');
