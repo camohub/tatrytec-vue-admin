@@ -99,7 +99,6 @@ export default {
                 entity_encoding: "raw",
                 relative_urls: false,  // ie. if true file manager produce urls like ../../../../wrong.jpg
                 content_css: "/tinymce-custom.css",
-                content_style: css,
                 image_advtab: true,
                 image_class_list: [
                     { title: 'None', value: '' },
