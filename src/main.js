@@ -21,7 +21,7 @@ axios.defaults.withCredentials = true;
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 let authToken = localStorage.getItem('authToken');
 axios.defaults.headers.common['Authorization'] = 'Bearer ' + authToken;
-axios.defaults.headers.common['Access-Control-Allow-Origin'] = 'https://vue.tatrytec.eu';
+//axios.defaults.headers.common['Access-Control-Allow-Origin'] = 'https://vue.tatrytec.eu';
 
 
 /**
