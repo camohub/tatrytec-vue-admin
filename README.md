@@ -31,6 +31,10 @@ like axios, router, vuex, bootstrap, ...
 - The main.js also check if token is valid.
 - If token is missing or is not valid LoginForm component get the token from server and 
     sets the token to localStorage and axios header.
+- CORS - Axios requires Access-Control-Allow-Origin header in RESPONSE
+	It also includes requests to the same vue.tatrytec.eu origin (See main.js).
+	https://newbedev.com/how-to-resolve-preflight-is-invalid-redirect-or-redirect-is-not-allowed-for-a-preflight-request
+
 
 # Vuex
 - User module
