@@ -67,6 +67,8 @@ export default {
 			let url = apiRoutes.CATEGORY_DELETE_URL + id;
 			axios(url)
 				.then( response => {
+					if( response.data.error ) return this.$store.dispatch('alerts/setErrorAlert', response.data.error);
+
 					this.$store.dispatch('alerts/setAlert', {'type': 'success', 'msg': 'Kategória bola zmazaná.'});
 					this.removeElement(e.target);
 				})
@@ -82,6 +84,7 @@ export default {
 			axios.get(url)
 				.then( response => {
 					if ( response.data.error ) return this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': response.data.error});
+
 					this.$store.dispatch('alerts/setAlert', {'type': 'success', 'msg': 'Viditeľnosť kategórie bola zmenená.'});
 					$(e.target).closest('a').toggleClass('text-danger').toggleClass('text-success');
 				})
