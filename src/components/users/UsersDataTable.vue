@@ -6,6 +6,7 @@
                 <tr>
                     <th>id</th>
                     <th>Name</th>
+                    <th>Created</th>
                     <th>Active</th>
                     <th></th>
                 </tr>
@@ -14,6 +15,7 @@
                 <tr v-for="user in users" :key="user.id">
                     <td>{{user.id}}</td>
                     <td>{{user.name}}</td>
+                    <td :data-sort="user.created_at">{{getCreatedAt(user.created_at)}}</td>
                     <td :class="user.deleted_at ? 'text-danger' : 'text-success'">{{user.deleted_at ? 'deleted' : 'active'}}</td>
                     <td class="actions">
                         <router-link :to="{name: 'User edit', params: {id: user.id}}" class="action"><font-awesome-icon icon="pencil-alt" /></router-link>

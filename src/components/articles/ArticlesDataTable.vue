@@ -16,7 +16,7 @@
                 <tr v-for="article in articles" :key="article.id">
                     <td>{{article.id}}</td>
                     <td>{{article.title}}</td>
-                    <td data-order='{{article.created_at}}'>{{getCreatedAt(article.created_at)}}</td>
+                    <td :data-order="article.created_at">{{getCreatedAt(article.created_at)}}</td>
                     <td :class="article.visible ? 'text-success' : 'text-danger'">{{article.visible ? 'visible' : 'hidden'}}</td>
                     <td>{{article.user.name}}</td>
                     <td class="actions">
