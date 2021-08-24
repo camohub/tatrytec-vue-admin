@@ -40,19 +40,13 @@ export default {
 			let url = apiRoutes.CATEGORIES_URL;
 			axios.get( url )
 				.then( response => {
-					if ( response.data.error ) return this.$store.dispatch( 'alerts/setAlert', {
-						'type': 'error',
-						'msg': response.data.error
-					});
+					if ( response.data.error ) return this.$store.dispatch('alerts/setErrorAlert', response.data.error);
 
 					this.$store.dispatch('categories/setCategories', response.data.categories);
 					this.loaded = true;  // Is neccessary because children mounted triggers before axios promise is filled.
 				})
 				.catch( error => {
-					this.$store.dispatch( 'alerts/setAlert', {
-						'type': 'error',
-						'msg': 'Nepodarilo sa načítať kategórie.'
-					});
+					this.$store.dispatch('alerts/setErrorAlert', 'Nepodarilo sa načítať kategórie.');
 				})
 				.then( () => this.loading-- );
 		},
@@ -67,13 +61,11 @@ export default {
 
 			axios.get( url + serialized )
 				.then( response => {
-					let data = response.data;
-					console.log(data);
-					if ( data.error ) return this.$store.dispatch( 'alerts/setAlert', {'type': 'error', 'msg': response.data.error});
-					return this.$store.dispatch( 'alerts/setAlert', {'type': 'success', 'msg': 'Poradie kategórií bolo zmenené.'});
+					if ( response.data.error ) return this.$store.dispatch('alerts/setErrorAlert', response.data.error);
+					return this.$store.dispatch( 'alerts/setSuccessAlert', 'Poradie kategórií bolo zmenené.');
 				})
 				.catch( error => {
-					return this.$store.dispatch( 'alerts/setAlert', {'type': 'error', 'msg': 'Pri ukladaní došlo k chybe.'});
+					return this.$store.dispatch('alerts/setErrorAlert', 'Pri ukladaní došlo k chybe.');
 				})
 				.then( () => this.loading-- );
 		}

@@ -69,11 +69,11 @@ export default {
 				.then( response => {
 					if( response.data.error ) return this.$store.dispatch('alerts/setErrorAlert', response.data.error);
 
-					this.$store.dispatch('alerts/setAlert', {'type': 'success', 'msg': 'Kategória bola zmazaná.'});
+					this.$store.dispatch('alerts/setSuccessAlert', 'Kategória bola zmazaná.');
 					this.removeElement(e.target);
 				})
 				.catch( error => {
-					this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa zmazať kategóriu.'});
+					this.$store.dispatch('alerts/setErrorAlert', 'Nepodarilo sa zmazať kategóriu.');
 				});
 		},
 
@@ -83,9 +83,9 @@ export default {
 
 			axios.get(url)
 				.then( response => {
-					if ( response.data.error ) return this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': response.data.error});
+					if ( response.data.error ) return this.$store.dispatch('alerts/setErrorAlert', response.data.error);
 
-					this.$store.dispatch('alerts/setAlert', {'type': 'success', 'msg': 'Viditeľnosť kategórie bola zmenená.'});
+					this.$store.dispatch('alerts/setSuccessAlert', 'Viditeľnosť kategórie bola zmenená.');
 					$(e.target).closest('a').toggleClass('text-danger').toggleClass('text-success');
 				})
 				.catch(function( error ) {

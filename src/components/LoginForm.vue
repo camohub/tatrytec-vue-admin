@@ -75,7 +75,7 @@ export default {
 
 					this.$store.dispatch('user/setUser', data.user);
 					this.setToken(data.user.token);
-					this.$store.dispatch('alerts/setAlert', {'type': 'success', 'msg': 'Vitajte na palube ' + data.user.name});
+					this.$store.dispatch('alerts/setSuccessAlert', 'Vitajte na palube ' + data.user.name);
 					this.$router.push( {name: 'Dashboard'});
 
 				})

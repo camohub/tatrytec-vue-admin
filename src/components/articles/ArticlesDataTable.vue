@@ -87,7 +87,7 @@ export default {
                 })
                 .catch( error => {
                     console.log(error);
-                    this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa načítať články.'});
+                    this.$store.dispatch('alerts/setErrorAlert', 'Nepodarilo sa načítať články.');
                 })
                 .then( () => this.loading-- );
         },
@@ -97,14 +97,14 @@ export default {
             axios.get( apiRoutes.ARTICLE_VISIBILITY_URL + id )
                 .then( response => {
 
-                    if( response.data.error ) return this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': response.data.error});
+                    if( response.data.error ) return this.$store.dispatch('alerts/setErrorAlert', response.data.error);
 
                     this.getArticles();
-                    this.$store.dispatch('alerts/setAlert', {'type': 'success', 'msg': 'Viditeľnosť článku bola zmenená.'});
+                    this.$store.dispatch('alerts/setSuccessAlert', 'Viditeľnosť článku bola zmenená.');
                 })
                 .catch( error => {
                     console.log(error);
-                    this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa zmeniť viviteľnosti článku.'});
+                    this.$store.dispatch('alerts/setErrorAlert', 'Nepodarilo sa zmeniť viviteľnosti článku.');
                 })
                 .then( () => this.loading-- )
         },
@@ -114,14 +114,14 @@ export default {
             axios.get( apiRoutes.ARTICLE_DELETE_URL + id )
                 .then( response => {
 
-                    if( response.data.error ) return this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': response.data.error});
+                    if( response.data.error ) return this.$store.dispatch('alerts/setErrorAlert', response.data.error);
 
                     this.dataTableObject.row( $(e.target).closest('tr') ).remove().draw();
-                    this.$store.dispatch('alerts/setAlert', {'type': 'success', 'msg': 'Článok bol vymazaný.'});
+                    this.$store.dispatch('alerts/setSuccessAlert', 'Článok bol vymazaný.');
                 })
                 .catch( response => {
                     console.log(response);
-                    this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa vymazať článok.'});
+                    this.$store.dispatch('alerts/setErrorAlert', 'Nepodarilo sa vymazať článok.');
                 })
                 .then( () => this.loading-- );
         },

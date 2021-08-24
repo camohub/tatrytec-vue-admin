@@ -72,7 +72,7 @@ export default {
             axios.get( apiRoutes.USERS_URL )
                 .then((response) => {
                     console.log(response.data);
-                    if( response.data.error ) return this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': response.data.error});
+                    if( response.data.error ) return this.$store.dispatch('alerts/setErrorAlert', response.data.error);
 
                     this.users = response.data.users;
 
@@ -82,7 +82,7 @@ export default {
                 })
                 .catch((response) => {
                     console.log(response);
-                    this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa načítať uživateľov.'});
+                    this.$store.dispatch('alerts/setErrorAlert', 'Nepodarilo sa načítať uživateľov.');
                 })
                 .then(() => this.loading--);
         },
@@ -92,14 +92,14 @@ export default {
             axios.get( apiRoutes.USER_TOGGLE_DELETE_URL + id )
                 .then( response => {
 
-                    if( response.data.error ) return this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': response.data.error});
+                    if( response.data.error ) return this.$store.dispatch('alerts/setErrorAlert', response.data.error);
 
                     this.getUsers();
-                    this.$store.dispatch('alerts/setAlert', {'type': 'success', 'msg': 'Viditeľnosť uživateľa bola zmenená.'});
+                    this.$store.dispatch('alerts/setSuccessAlert', 'Viditeľnosť uživateľa bola zmenená.');
                 })
                 .catch( response => {
                     console.log(response);
-                    this.$store.dispatch('alerts/setAlert', {'type': 'error', 'msg': 'Nepodarilo sa zmeniť viviteľnosti uživateľa.'});
+                    this.$store.dispatch('alerts/setErrorAlert', 'Nepodarilo sa zmeniť viviteľnosti uživateľa.');
                 })
                 .then( () => this.loading-- );
         },
