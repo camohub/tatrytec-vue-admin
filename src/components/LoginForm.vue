@@ -53,7 +53,6 @@ export default {
             if( !this.email || !this.password )
             {
                 this.errors = ['Vyplňte prosím email a heslo.'];
-                console.log(this.errors);
                 return;
             }
 
@@ -63,28 +62,27 @@ export default {
                 password: this.password,
             };
 
-			axios.get('https://tatrytec.eu/sanctum/csrf-cookie').then(response => {
-				axios.post(url, formData)
-					.then((response) => {
-						let data = response.data;
 
-						if( data.errors )
-						{
-							this.errors = data.errors;
-							return;
-						}
+			axios.post(url, formData)
+				.then((response) => {
+					let data = response.data;
 
-						this.$store.dispatch('user/setUser', data.user);
-						this.setToken(data.user.token);
-						this.$store.dispatch('alerts/setAlert', {'type': 'success', 'msg': 'Vitajte na palube ' + data.user.name});
-						this.$router.push( {name: 'Dashboard'});
+					if( data.errors )
+					{
+						this.errors = data.errors;
+						return;
+					}
 
-					})
-					.catch((respose) => {
-						console.log(respose);
-						this.errors = ['Nepodarilo sa vás prihlásiť.'];
-					});
-			});
+					this.$store.dispatch('user/setUser', data.user);
+					this.setToken(data.user.token);
+					this.$store.dispatch('alerts/setAlert', {'type': 'success', 'msg': 'Vitajte na palube ' + data.user.name});
+					this.$router.push( {name: 'Dashboard'});
+
+				})
+				.catch((respose) => {
+					console.log(respose);
+					this.errors = ['Nepodarilo sa vás prihlásiť.'];
+				});
 
         },
 
@@ -92,10 +90,7 @@ export default {
             // User can refresh the page so token has to be set 
             // in permanent storage not in vuex.
             localStorage.setItem("authToken", token);
-            
-            axios.defaults.headers.common = {
-                'Authorization': 'Bearer ' + token
-            };
+            axios.defaults.headers.common['Authorization'] = 'Bearer ' + authToken;
         }
     },
 }
