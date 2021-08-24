@@ -123,7 +123,7 @@ export default {
     },
 
     components: {
-        Editor, Loader
+        Loader
     },
 };
 

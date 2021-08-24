@@ -9,30 +9,12 @@
 
 <script>
 
-import { ref } from "vue"
-import apiRoutes from '@/router/apiRoutes'
 import CategoryForm from '@/components/categories/CategoryForm'
 
 
 export default {
 
 	name: "Category create",
-
-	data() {
-		return {
-
-		}
-	},
-
-	methods: {
-
-	},
-
-	computed: {
-	},
-
-	created() {
-	},
 
 	components: {
 		CategoryForm

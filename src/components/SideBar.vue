@@ -1,20 +1,20 @@
 <template>
     <ul class="col-3 col-md-2" id="sideBar">
 
-        <li><router-link to="/">Dashboard</router-link></li>
+        <li><router-link :to="{name: 'Dashboard'}">Dashboard</router-link></li>
         <li><a href="#" @click.prevent="logout()">Logout</a></li>
 
         <h3>Articles</h3>
-        <li><router-link to="/articles">Articles</router-link></li>
-        <li><router-link to="/article/create">Create article</router-link></li>
+        <li><router-link :to="{name: 'Articles'}">Articles</router-link></li>
+        <li><router-link :to="{name: 'Article create'}">Create article</router-link></li>
 
         <h3>Categories</h3>
-        <li><router-link to="/categories">Categories</router-link></li>
-        <li><router-link to="/category/create">Create category</router-link></li>
+        <li><router-link :to="{name: 'Categories'}">Categories</router-link></li>
+        <li><router-link :to="{name: 'Category create'}">Create category</router-link></li>
 
         <h3>Users</h3>
-        <li><router-link to="/users">Users</router-link></li>
-        <li><router-link to="/user/create">Create user</router-link></li>
+        <li><router-link :to="{name: 'Users'}">Users</router-link></li>
+        <li><router-link :to="{name: 'User create'}">Create user</router-link></li>
 
     </ul>
 </template>
