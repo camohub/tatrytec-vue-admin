@@ -90,7 +90,7 @@ export default {
             // User can refresh the page so token has to be set 
             // in permanent storage not in vuex.
             localStorage.setItem("authToken", token);
-            axios.defaults.headers.common['Authorization'] = 'Bearer ' + authToken;
+            axios.defaults.headers.common['Authorization'] = 'Bearer ' + token;
         }
     },
 }
