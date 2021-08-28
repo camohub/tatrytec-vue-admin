@@ -1,5 +1,5 @@
 <template>
-    <div class="col-9 col-xl-7">
+    <div class="col-sm-9 col-xl-7">
         <h2>Article create</h2>
 
         <ArticleForm :id="this.id" />

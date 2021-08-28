@@ -1,5 +1,5 @@
 <template>
-    <div class="col-9 col-md-10">
+    <div class="col-sm-9 col-md-10">
         <h2>Dashboard</h2>
     </div>
 </template>

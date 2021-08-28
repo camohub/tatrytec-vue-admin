@@ -1,5 +1,5 @@
 <template>
-    <div class="col-9 col-xl-5 offset-xl-1">
+    <div class="col-sm-9 col-xl-5 offset-xl-1">
         <h2>Categories</h2>
 
 		<span @click="storeOrder" v-if="this.loaded" class="btn btn-sm btn-primary editOrder">Uložiť poradie</span>

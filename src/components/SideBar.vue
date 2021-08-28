@@ -1,5 +1,5 @@
 <template>
-    <ul class="col-3 col-md-2" id="sideBar">
+    <ul class="col-sm-3 col-md-2" id="sideBar">
 
         <li><router-link :to="{name: 'Dashboard'}">Dashboard</router-link></li>
         <li><a href="#" @click.prevent="logout()">Logout</a></li>
