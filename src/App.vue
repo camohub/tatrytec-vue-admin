@@ -46,18 +46,10 @@ html, body {
     h2 {
         margin-bottom: 20px;
     }
-}
 
-#nav {
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+    a {
+        text-decoration: none;
     }
-  }
 }
 
 /***************************************************************/

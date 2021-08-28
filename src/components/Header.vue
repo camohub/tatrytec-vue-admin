@@ -32,7 +32,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+
 #header {
+
+    @media(max-width: 575px) {
+        margin-bottom: 14px;
+    }
+
     background-color: #000;
     color: #fff;
     margin-bottom: 50px;
