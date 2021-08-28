@@ -43,7 +43,8 @@ import $ from 'jquery'
 //import "datatables.net-dt/css/jquery.dataTables.min.css"
 
 import "datatables.net-bs4/css/dataTables.bootstrap4.css"
-import "datatables.net-bs4/js/dataTables.bootstrap4.js"
+//import "datatables.net-bs4/js/dataTables.bootstrap4.js"
+import 'datatables.net-bs4'
 
 // fa font awesome
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -145,11 +146,12 @@ export default {
                 }
             });
 
-            this.dataTableObject.on('draw', function(e) {
+            // This is a bug in datatables-bs4 v3.2.x
+            /*this.dataTableObject.on('draw', function(e) {
                 $(this).closest('.dataTables_wrapper')
                     .removeClass('form-inline')
                     .find('.col-xs-12').addClass('col-12');
-            });
+            });*/
         },
 
         getCreatedAt(timestamp) {
