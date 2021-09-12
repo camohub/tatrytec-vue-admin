@@ -53,6 +53,7 @@
 
 // @ is an alias to /src
 import { ref } from "vue"
+import { mapActions } from 'vuex'
 import apiRoutes from "@/router/apiRoutes"
 import router from '@/router'
 import Loader from '@/components/Loader'
@@ -75,6 +76,8 @@ export default {
 
     methods: {
 
+        ...mapActions('alerts', ['setErrorAlert', 'setSuccessAlert']),
+
         createUser() {
             this.user = {
                 name: '',
@@ -89,11 +92,11 @@ export default {
             this.loading++;
             axios.get( apiRoutes.USER_EDIT_URL + this.id )
                 .then( response => {
-                    if( response.data.error ) return this.$store.dispatch('alerts/setErrorAlert', response.data.error);
+                    if( response.data.error ) return this.setErrorAlert(response.data.error);
                     this.user = response.data.user;
                 })
                 .catch( response => {
-                    this.$store.dispatch('alerts/setErrorAlert', 'Nepodarilo sa načítať profil.');
+                    this.setErrorAlert('Nepodarilo sa načítať profil.');
                 })
                 .then( () => this.loading-- );
         },
@@ -103,8 +106,8 @@ export default {
             let url = apiRoutes.USER_STORE_URL + (this.user.id ? '/' + this.user.id : '');
             axios.post( url, this.user )
                 .then( response => {
-                    if(response.data.error) return this.$store.dispatch('alerts/setErrorAlert', response.data.error);
-                    else this.$store.dispatch('alerts/setSuccessAlert', 'Profil bol uložený.');
+                    if(response.data.error) return this.setErrorAlert(response.data.error);
+                    else this.setSuccessAlert('Profil bol uložený.');
 
                     this.formErrors = {};
                     if( !this.id ) router.push( {name: 'User edit', params: {id: response.data.id}} );
@@ -114,7 +117,7 @@ export default {
                     if ( error.response?.data?.errors ) this.formErrors = error.response.data.errors;
                     else this.formErrors = {};
 
-                    this.$store.dispatch('alerts/setErrorAlert', 'Pri ukladaní došlo k chybe.');
+                    this.setErrorAlert('Pri ukladaní došlo k chybe.');
                 })
                 .then( () => this.loading-- );
         },
@@ -126,7 +129,7 @@ export default {
                     this.selectRoles = response.data.selectRoles;
                 })
                 .catch( error => {
-                    this.$store.dispatch('alerts/setErrorAlert', 'Nepodarilo sa načítať uživetľské role.');
+                    this.setErrorAlert('Nepodarilo sa načítať uživetľské role.');
                 })
                 .then( () => this.loading-- );
         },

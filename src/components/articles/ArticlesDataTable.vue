@@ -34,6 +34,7 @@
 
 <script>
 
+import { mapActions } from 'vuex'
 import apiRoutes from "@/router/apiRoutes"
 //Bootstrap and jQuery libraries
 //import 'jquery/dist/jquery.min.js';
@@ -76,6 +77,8 @@ export default {
 
     methods: {
 
+		...mapActions('alerts', ['setErrorAlert', 'setSuccessAlert']),
+
         getArticles() {
             this.loading++;
             axios.get( apiRoutes.ARTICLES_URL ) 
@@ -88,7 +91,7 @@ export default {
                 })
                 .catch( error => {
                     console.log(error);
-                    this.$store.dispatch('alerts/setErrorAlert', 'Nepodarilo sa načítať články.');
+                    this.setErrorAlert('Nepodarilo sa načítať články.');
                 })
                 .then( () => this.loading-- );
         },
@@ -98,14 +101,14 @@ export default {
             axios.get( apiRoutes.ARTICLE_VISIBILITY_URL + id )
                 .then( response => {
 
-                    if( response.data.error ) return this.$store.dispatch('alerts/setErrorAlert', response.data.error);
+                    if( response.data.error ) return this.setErrorAlert(response.data.error);
 
                     this.getArticles();
-                    this.$store.dispatch('alerts/setSuccessAlert', 'Viditeľnosť článku bola zmenená.');
+                    this.setSuccessAlert('Viditeľnosť článku bola zmenená.');
                 })
                 .catch( error => {
                     console.log(error);
-                    this.$store.dispatch('alerts/setErrorAlert', 'Nepodarilo sa zmeniť viviteľnosti článku.');
+                    this.setErrorAlert('Nepodarilo sa zmeniť viviteľnosti článku.');
                 })
                 .then( () => this.loading-- )
         },
@@ -115,14 +118,14 @@ export default {
             axios.get( apiRoutes.ARTICLE_DELETE_URL + id )
                 .then( response => {
 
-                    if( response.data.error ) return this.$store.dispatch('alerts/setErrorAlert', response.data.error);
+                    if( response.data.error ) return this.setErrorAlert(response.data.error);
 
                     this.dataTableObject.row( $(e.target).closest('tr') ).remove().draw();
-                    this.$store.dispatch('alerts/setSuccessAlert', 'Článok bol vymazaný.');
+                    this.setSuccessAlert('Článok bol vymazaný.');
                 })
                 .catch( response => {
                     console.log(response);
-                    this.$store.dispatch('alerts/setErrorAlert', 'Nepodarilo sa vymazať článok.');
+                    this.setErrorAlert('Nepodarilo sa vymazať článok.');
                 })
                 .then( () => this.loading-- );
         },

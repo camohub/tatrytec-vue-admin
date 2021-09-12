@@ -33,6 +33,7 @@
 
 // @ is an alias to /src
 import { ref } from "vue"
+import { mapActions } from 'vuex'
 import router from '@/router'
 import apiRoutes from "@/router/apiRoutes"
 import Loader from '@/components/Loader'
@@ -54,6 +55,8 @@ export default {
 
     methods: {
 
+        ...mapActions('alerts', ['setErrorAlert', 'setSuccessAlert']),
+
         createCategory() {
             this.category = {
                 name: '',
@@ -65,11 +68,11 @@ export default {
             this.loading++;
             axios.get( apiRoutes.CATEGORY_EDIT_URL + this.id )
                 .then( response => {
-                    if( response.data.error ) return this.$store.dispatch('alerts/setErrorAlert', response.data.error);
+                    if( response.data.error ) return this.setErrorAlert(response.data.error);
                     this.category = response.data.category;
                 })
                 .catch( response => {
-                    this.$store.dispatch('alerts/setErrorAlert', 'Nepodarilo sa načítať kategóriu.');
+                    this.setErrorAlert('Nepodarilo sa načítať kategóriu.');
                 })
                 .then( () => this.loading-- );
         },
@@ -82,7 +85,7 @@ export default {
                     this.selectCategories = response.data.selectCategories;
                 })
                 .catch( error => {
-                    this.$store.dispatch('alerts/setErrorAlert', 'Nepodarilo sa načítať kategórie.');
+                    this.setErrorAlert('Nepodarilo sa načítať kategórie.');
                 })
                 .then( () => this.loading-- );
         },
@@ -92,8 +95,8 @@ export default {
             let url = apiRoutes.CATEGORY_STORE_URL + (this.category.id ? '/' + this.category.id : '');
             axios.post( url, this.category )
                 .then( response => {
-                    if(response.data.error) return this.$store.dispatch('alerts/setErrorAlert', response.data.error);
-                    else this.$store.dispatch('alerts/setSuccessAlert', 'Kategória bola uložená.');
+                    if(response.data.error) return this.setErrorAlert(response.data.error);
+                    else this.setSuccessAlert('Kategória bola uložená.');
 
                     this.formErrors = {};
                     if( !this.id ) router.push( {name: 'Category edit', params: {id: response.data.id}} );
@@ -103,7 +106,7 @@ export default {
                     if ( error.response?.data?.errors ) this.formErrors = error.response.data.errors;
                     else this.formErrors = {};
 
-                    this.$store.dispatch('alerts/setErrorAlert', 'Pri ukladaní došlo k chybe.');
+                    this.setErrorAlert('Pri ukladaní došlo k chybe.');
                 })
                 .then( () => this.loading-- );
         },
