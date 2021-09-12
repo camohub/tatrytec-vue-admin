@@ -75,6 +75,7 @@
 
 // @ is an alias to /src
 import { ref } from "vue"
+import { mapActions } from 'vuex'
 import router from '@/router'
 import apiRoutes from "@/router/apiRoutes"
 import Editor from '@tinymce/tinymce-vue'
@@ -149,6 +150,8 @@ export default {
 
     methods: {
 
+		...mapActions('alerts', ['setErrorAlert', 'setSuccessAlert']),
+
         createArticle() {
             this.article = {
                 title: '',
@@ -163,11 +166,11 @@ export default {
             this.loading++;
             axios.get( apiRoutes.ARTICLE_EDIT_URL + this.id )
                 .then( response => {
-                    if( response.data.error ) return this.$store.dispatch('alerts/setErrorAlert', response.data.error);
+                    if( response.data.error ) return this.setErrorAlert(response.data.error);
                     this.article = response.data.article;
                 })
                 .catch( response => {
-                    this.$store.dispatch('alerts/setErrorAlert', 'Nepodarilo sa načítať článok.');
+                    this.setErrorAlert('Nepodarilo sa načítať článok.');
                 })
                 .then( () => this.loading-- );
         },
@@ -179,7 +182,7 @@ export default {
                     this.selectCategories = response.data.selectCategories;
                 })
                 .catch( error => {
-                    this.$store.dispatch('alerts/setErrorAlert', 'Nepodarilo sa načítať kategórie.');
+                    this.setErrorAlert('Nepodarilo sa načítať kategórie.');
                 })
                 .then( () => this.loading-- );
         },
@@ -189,8 +192,8 @@ export default {
             let url = apiRoutes.ARTICLE_STORE_URL + (this.article.id ? '/' + this.article.id : '');
             axios.post( url, this.article )
                 .then( response => {
-                    if(response.data.error) return this.$store.dispatch('alerts/setErrorAlert', response.data.error);
-                    else this.$store.dispatch('alerts/setSuccessAlert', 'Článok bol uložený.');
+                    if(response.data.error) return this.setErrorAlert(response.data.error);
+                    else this.setSuccessAlert('Článok bol uložený.');
 
                     this.formErrors = {};
                     if( !this.id ) router.push( {name: 'Article edit', params: {id: response.data.id}} );
@@ -200,7 +203,7 @@ export default {
                     if ( error.response?.data?.errors ) this.formErrors = error.response.data.errors;
                     else this.formErrors = {};
 
-                    this.$store.dispatch('alerts/setErrorAlert', 'Pri ukladaní došlo k chybe.');
+                    this.setErrorAlert('Pri ukladaní došlo k chybe.');
                 })
                 .then( () => this.loading-- );
         },
@@ -215,7 +218,7 @@ export default {
             axios.post(url, formData, headers)
                 .then( response => {
                     let data = response.data;
-                    if( data.error ) return this.$store.dispatch('alerts/setErrorAlert', data.error);
+                    if( data.error ) return this.setErrorAlert(data.error);
 
                     let webUrl = apiRoutes.API_URL_SHORT;
                     filePickerCallback(webUrl + data.filePath);
@@ -225,7 +228,7 @@ export default {
                     console.log(data);
                     let msg = 'Pri ukladaní obrázku došlo k chybe.';
                     if( data.errors.image ) msg += '<br>' + data.errors.image[0];
-                    this.$store.dispatch('alerts/setErrorAlert', msg);
+                    this.setErrorAlert(msg);
                 })
                 .then( () => this.loading-- );
         },
